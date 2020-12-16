@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_IPTV_AGGIORNA_ANAG",
+    "name" : "WS_IPTV_AGGIORNA_ANAG",
+    "remoteName" : "WS_IPTV_AGGIORNA_ANAG",
+    "localPath" : "esb_am\\repo\\WS_IPTV_AGGIORNA_ANAG",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_IPTV_AGGIORNA_ANAG?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

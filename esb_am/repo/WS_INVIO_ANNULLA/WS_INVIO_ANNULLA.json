@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_INVIO_ANNULLA",
+    "name" : "WS_INVIO_ANNULLA",
+    "remoteName" : "WS_INVIO_ANNULLA",
+    "localPath" : "esb_am\\repo\\WS_INVIO_ANNULLA",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_INVIO_ANNULLA?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

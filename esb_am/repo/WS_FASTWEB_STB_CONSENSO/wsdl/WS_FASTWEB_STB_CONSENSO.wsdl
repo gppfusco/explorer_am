@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <wsdl:types> 
+  <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus"> 
+   <xsd:complexType name="setSkySelectionResponseBean"> 
+    <xsd:sequence> 
+     <xsd:element name="privacyUrl" nillable="true" type="xsd:string" /> 
+     <xsd:element name="errorCode" nillable="true" type="xsd:string" /> 
+     <xsd:element name="errorMsg" nillable="true" type="xsd:string" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:element name="op_fw_set_sky_selection"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="idSkyFw" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="CodicePromozione" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="RateCodePacchetto" type="xsd:string" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="op_fw_set_sky_selectionResponse"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="COMPLEX_OUTPUT" type="eb:setSkySelectionResponseBean" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:schema> 
+ </wsdl:types> 
+ <wsdl:message name="op_fw_set_sky_selectionRequest"> 
+  <wsdl:part element="eb:op_fw_set_sky_selection" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:message name="op_fw_set_sky_selectionResponse"> 
+  <wsdl:part element="eb:op_fw_set_sky_selectionResponse" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:portType name="WS_FASTWEB_STB_CONSENSOSoap"> 
+  <wsdl:operation name="op_fw_set_sky_selection"> 
+   <wsdl:input message="eb:op_fw_set_sky_selectionRequest" name="op_fw_set_sky_selectionRequest" /> 
+   <wsdl:output message="eb:op_fw_set_sky_selectionResponse" name="op_fw_set_sky_selectionResponse" /> 
+  </wsdl:operation> 
+ </wsdl:portType> 
+ <wsdl:binding name="WS_FASTWEB_STB_CONSENSOSoap" type="eb:WS_FASTWEB_STB_CONSENSOSoap"> 
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /> 
+  <wsdl:operation name="op_fw_set_sky_selection"> 
+   <soap:operation soapAction="WS_FASTWEB_STB_CONSENSO/op_fw_set_sky_selection" style="document" /> 
+   <wsdl:input name="op_fw_set_sky_selectionRequest"> 
+    <soap:body use="literal" /> 
+   </wsdl:input> 
+   <wsdl:output name="op_fw_set_sky_selectionResponse"> 
+    <soap:body use="literal" /> 
+   </wsdl:output> 
+  </wsdl:operation> 
+ </wsdl:binding> 
+ <wsdl:service name="WS_FASTWEB_STB_CONSENSO"> 
+  <wsdl:port binding="eb:WS_FASTWEB_STB_CONSENSOSoap" name="WS_FASTWEB_STB_CONSENSOSoap"> 
+   <soap:address location="http://CAMBIAMI-AM:9100/wsexistbus/openws/WS_FASTWEB_STB_CONSENSO" /> 
+  </wsdl:port> 
+ </wsdl:service> 
+</wsdl:definitions>

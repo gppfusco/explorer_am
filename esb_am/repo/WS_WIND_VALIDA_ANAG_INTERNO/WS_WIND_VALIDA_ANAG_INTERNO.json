@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_WIND_VALIDA_ANAG_INTERNO",
+    "name" : "WS_WIND_VALIDA_ANAG_INTERNO",
+    "remoteName" : "WS_WIND_VALIDA_ANAG_INTERNO",
+    "localPath" : "esb_am\\repo\\WS_WIND_VALIDA_ANAG_INTERNO",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_WIND_VALIDA_ANAG_INTERNO?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

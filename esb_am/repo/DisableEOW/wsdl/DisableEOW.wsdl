@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <wsdl:types> 
+  <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus"> 
+   <xsd:element name="EOW_DISABLE"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="WS_SMART_CARD" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="WS_TRANS_ID" type="xsd:string" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="EOW_DISABLEResponse"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="WS_RESULT" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="WS_DESCRIPTION" type="xsd:string" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:schema> 
+ </wsdl:types> 
+ <wsdl:message name="EOW_DISABLERequest"> 
+  <wsdl:part element="eb:EOW_DISABLE" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:message name="EOW_DISABLEResponse"> 
+  <wsdl:part element="eb:EOW_DISABLEResponse" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:portType name="DisableEOWSoap"> 
+  <wsdl:operation name="EOW_DISABLE"> 
+   <wsdl:input message="eb:EOW_DISABLERequest" name="EOW_DISABLERequest" /> 
+   <wsdl:output message="eb:EOW_DISABLEResponse" name="EOW_DISABLEResponse" /> 
+  </wsdl:operation> 
+ </wsdl:portType> 
+ <wsdl:binding name="DisableEOWSoap" type="eb:DisableEOWSoap"> 
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /> 
+  <wsdl:operation name="EOW_DISABLE"> 
+   <soap:operation soapAction="DisableEOW/EOW_DISABLE" style="document" /> 
+   <wsdl:input name="EOW_DISABLERequest"> 
+    <soap:body use="literal" /> 
+   </wsdl:input> 
+   <wsdl:output name="EOW_DISABLEResponse"> 
+    <soap:body use="literal" /> 
+   </wsdl:output> 
+  </wsdl:operation> 
+ </wsdl:binding> 
+ <wsdl:service name="DisableEOW"> 
+  <wsdl:port binding="eb:DisableEOWSoap" name="DisableEOWSoap"> 
+   <soap:address location="http://CAMBIAMI-AM:9100/wsexistbus/openws/DisableEOW" /> 
+  </wsdl:port> 
+ </wsdl:service> 
+</wsdl:definitions>

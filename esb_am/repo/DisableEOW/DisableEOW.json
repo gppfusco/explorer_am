@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "DisableEOW",
+    "name" : "DisableEOW",
+    "remoteName" : "DisableEOW",
+    "localPath" : "esb_am\\repo\\DisableEOW",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/DisableEOW?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

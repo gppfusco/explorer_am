@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_WSC_LEGGIDATICONTRATTO",
+    "name" : "WS_WSC_LEGGIDATICONTRATTO",
+    "remoteName" : "WS_WSC_LEGGIDATICONTRATTO",
+    "localPath" : "esb_am\\repo\\WS_WSC_LEGGIDATICONTRATTO",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_WSC_LEGGIDATICONTRATTO?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "SkyXSD_WS_WSC_LEGGI_DATI_CONTRATTO.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

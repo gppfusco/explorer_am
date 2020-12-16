@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_WSC2_LEGGIDATICLIENTE_ALE",
+    "name" : "WS_WSC2_LEGGIDATICLIENTE_ALE",
+    "remoteName" : "WS_WSC2_LEGGIDATICLIENTE_ALE",
+    "localPath" : "esb_am\\repo\\WS_WSC2_LEGGIDATICLIENTE_ALE",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_WSC2_LEGGIDATICLIENTE_ALE?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "SkyXSD_WS_LEGGIDATICLIENTE.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

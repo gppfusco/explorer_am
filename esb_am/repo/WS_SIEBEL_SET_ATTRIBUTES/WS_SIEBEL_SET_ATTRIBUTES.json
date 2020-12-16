@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_SIEBEL_SET_ATTRIBUTES",
+    "name" : "WS_SIEBEL_SET_ATTRIBUTES",
+    "remoteName" : "WS_SIEBEL_SET_ATTRIBUTES",
+    "localPath" : "esb_am\\repo\\WS_SIEBEL_SET_ATTRIBUTES",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_SIEBEL_SET_ATTRIBUTES?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <wsdl:types> 
+  <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus"> 
+   <xsd:include schemaLocation="xsdTelecom/SkyXSD_json_telemetria.xsd" /> 
+   <xsd:complexType name="DocumentDataInput"> 
+    <xsd:complexContent> 
+     <xsd:extension base="eb:JsonRequestType" /> 
+    </xsd:complexContent> 
+   </xsd:complexType> 
+   <xsd:complexType name="DocumentDataOutput"> 
+    <xsd:complexContent> 
+     <xsd:extension base="eb:JsonResponseType" /> 
+    </xsd:complexContent> 
+   </xsd:complexType> 
+   <xsd:element name="opJson"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="COMPLEX_INPUT" type="eb:DocumentDataInput" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="opJsonResponse"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="COMPLEX_OUTPUT" type="eb:DocumentDataOutput" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:schema> 
+ </wsdl:types> 
+ <wsdl:message name="opJsonRequest"> 
+  <wsdl:part element="eb:opJson" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:message name="opJsonResponse"> 
+  <wsdl:part element="eb:opJsonResponse" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:portType name="WS_TI_TELEMETRIA_JSONSoap"> 
+  <wsdl:operation name="opJson"> 
+   <wsdl:input message="eb:opJsonRequest" name="opJsonRequest" /> 
+   <wsdl:output message="eb:opJsonResponse" name="opJsonResponse" /> 
+  </wsdl:operation> 
+ </wsdl:portType> 
+ <wsdl:binding name="WS_TI_TELEMETRIA_JSONSoap" type="eb:WS_TI_TELEMETRIA_JSONSoap"> 
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /> 
+  <wsdl:operation name="opJson"> 
+   <soap:operation soapAction="WS_TI_TELEMETRIA_JSON/opJson" style="document" /> 
+   <wsdl:input name="opJsonRequest"> 
+    <soap:body use="literal" /> 
+   </wsdl:input> 
+   <wsdl:output name="opJsonResponse"> 
+    <soap:body use="literal" /> 
+   </wsdl:output> 
+  </wsdl:operation> 
+ </wsdl:binding> 
+ <wsdl:service name="WS_TI_TELEMETRIA_JSON"> 
+  <wsdl:port binding="eb:WS_TI_TELEMETRIA_JSONSoap" name="WS_TI_TELEMETRIA_JSONSoap"> 
+   <soap:address location="http://CAMBIAMI-AM:9100/wsexistbus/ws/WS_TI_TELEMETRIA_JSON" /> 
+  </wsdl:port> 
+ </wsdl:service> 
+</wsdl:definitions>

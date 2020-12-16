@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_SIEBEL_GET_LOV_CATENA",
+    "name" : "WS_SIEBEL_GET_LOV_CATENA",
+    "remoteName" : "WS_SIEBEL_GET_LOV_CATENA",
+    "localPath" : "esb_am\\repo\\WS_SIEBEL_GET_LOV_CATENA",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_SIEBEL_GET_LOV_CATENA?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

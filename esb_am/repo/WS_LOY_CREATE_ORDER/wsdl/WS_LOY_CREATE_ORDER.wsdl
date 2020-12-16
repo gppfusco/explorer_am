@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <wsdl:types> 
+  <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus"> 
+   <xsd:complexType name="DocumentDataIN"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="Channel" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="OrderNumber" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="PartNumber" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="PartNumberMV" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="Indirizzo" type="eb:Indirizzo" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="Attributi" type="eb:Attributi" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="connId" type="xsd:string" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:complexType name="Indirizzo"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="Cognome" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="Via" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="Provincia" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="Citta" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="Nome" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="Telefono" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="Nazione" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="NoteConsegna" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="Presso" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CAP" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="EMail" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="Cellulare" type="xsd:string" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:complexType name="Attributi"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="Colore" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="Location" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="FasciaPunti" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="Taglia" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="TipoFotoAlbum" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="Squadra" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="LocationFAI" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="TemaWE" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="Temalibro" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="Gioco" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="TipoGioco" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="Tipo" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="LocationWA" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="MBVodafoneKey" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="SquadraI" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="ColoreDiablo" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="ColoreRadioLex" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="ColfelpaMan" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="ColfelpaWom" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="ColoreCuscin" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="ColoreFerrari" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="ColoreLampLiving" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="ColoreVC" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="Colorefoxwoman" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="DataCamp" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="SquadraInternazionale" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="SquadraIta" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="SquadraItaliana" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="TagfelpaWom" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="TaglfelpaMan" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="TagliaPiumSma" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="TagliaSqInter" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="TagliaSqIta" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="Tagliafoxman" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="Tagliafoxwoman" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="TipoGiocWII" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="TipoGiocoBT" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="TipoGiocoPC" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="TipoPallone" type="xsd:string" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:complexType name="DocumentData"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="Root" type="eb:Root" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:complexType name="Root"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="StatusCode" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="ErrorCode" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="ErrorDescription" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="RedmptionOrderNumber" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="RedmptionOrderLineId" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="SmartPartNumber" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="PartNumber" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="IdPromo" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CodiceContratto" type="xsd:string" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:element name="SIEBEL_ADP_OPERATION"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="COMPLEX_INPUT" type="eb:DocumentDataIN" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="SIEBEL_ADP_OPERATIONResponse"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="COMPLEX_OUTPUT" type="eb:DocumentData" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:schema> 
+ </wsdl:types> 
+ <wsdl:message name="SIEBEL_ADP_OPERATIONRequest"> 
+  <wsdl:part element="eb:SIEBEL_ADP_OPERATION" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:message name="SIEBEL_ADP_OPERATIONResponse"> 
+  <wsdl:part element="eb:SIEBEL_ADP_OPERATIONResponse" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:portType name="WS_LOY_CREATE_ORDERSoap"> 
+  <wsdl:operation name="SIEBEL_ADP_OPERATION"> 
+   <wsdl:input message="eb:SIEBEL_ADP_OPERATIONRequest" name="SIEBEL_ADP_OPERATIONRequest" /> 
+   <wsdl:output message="eb:SIEBEL_ADP_OPERATIONResponse" name="SIEBEL_ADP_OPERATIONResponse" /> 
+  </wsdl:operation> 
+ </wsdl:portType> 
+ <wsdl:binding name="WS_LOY_CREATE_ORDERSoap" type="eb:WS_LOY_CREATE_ORDERSoap"> 
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /> 
+  <wsdl:operation name="SIEBEL_ADP_OPERATION"> 
+   <soap:operation soapAction="WS_LOY_CREATE_ORDER/SIEBEL_ADP_OPERATION" style="document" /> 
+   <wsdl:input name="SIEBEL_ADP_OPERATIONRequest"> 
+    <soap:body use="literal" /> 
+   </wsdl:input> 
+   <wsdl:output name="SIEBEL_ADP_OPERATIONResponse"> 
+    <soap:body use="literal" /> 
+   </wsdl:output> 
+  </wsdl:operation> 
+ </wsdl:binding> 
+ <wsdl:service name="WS_LOY_CREATE_ORDER"> 
+  <wsdl:port binding="eb:WS_LOY_CREATE_ORDERSoap" name="WS_LOY_CREATE_ORDERSoap"> 
+   <soap:address location="http://CAMBIAMI-AM:9100/wsexistbus/openws/WS_LOY_CREATE_ORDER" /> 
+  </wsdl:port> 
+ </wsdl:service> 
+</wsdl:definitions>

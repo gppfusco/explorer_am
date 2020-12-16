@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_IVR_SBL_CATALOGO_PROMO_PARCO",
+    "name" : "WS_IVR_SBL_CATALOGO_PROMO_PARCO",
+    "remoteName" : "WS_IVR_SBL_CATALOGO_PROMO_PARCO",
+    "localPath" : "esb_am\\repo\\WS_IVR_SBL_CATALOGO_PROMO_PARCO",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_IVR_SBL_CATALOGO_PROMO_PARCO?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "SkyXSD_WS_IVR_SBL_CATALOGO_PROMO_PARCO.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

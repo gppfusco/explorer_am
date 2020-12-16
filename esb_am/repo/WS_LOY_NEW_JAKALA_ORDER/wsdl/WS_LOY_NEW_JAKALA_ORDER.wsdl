@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <wsdl:types> 
+  <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus"> 
+   <xsd:complexType name="out"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="unbounded" minOccurs="0" name="entry"> 
+      <xsd:complexType> 
+       <xsd:sequence> 
+        <xsd:element maxOccurs="1" minOccurs="0" name="key" type="xsd:string" /> 
+        <xsd:element maxOccurs="1" minOccurs="0" name="value" type="xsd:string" /> 
+       </xsd:sequence> 
+      </xsd:complexType> 
+     </xsd:element> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:element name="opNewJakalaOrder"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="Partner" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="User" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="CodJob" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="DataOrdine" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="Canale" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="OrdineSky" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="Loyalty" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="Nome" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="Cognome" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="Via" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="Citta" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="Provincia" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="CAP" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="Nazione" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="Presso" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="Telefono" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="NoteConsegna" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="ItemSky" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="ItemJakala" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="Punti" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="Euro" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="FlagSelf" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="TransazioneSelf" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="Quantita" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="CUSTOM1" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="CUSTOM2" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="CUSTOM3" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="CUSTOM4" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="CUSTOM5" type="xsd:string" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="opNewJakalaOrderResponse"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="newJakalaOrderResponse" type="eb:out" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:schema> 
+ </wsdl:types> 
+ <wsdl:message name="opNewJakalaOrderRequest"> 
+  <wsdl:part element="eb:opNewJakalaOrder" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:message name="opNewJakalaOrderResponse"> 
+  <wsdl:part element="eb:opNewJakalaOrderResponse" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:portType name="WS_LOY_NEW_JAKALA_ORDERSoap"> 
+  <wsdl:operation name="opNewJakalaOrder"> 
+   <wsdl:input message="eb:opNewJakalaOrderRequest" name="opNewJakalaOrderRequest" /> 
+   <wsdl:output message="eb:opNewJakalaOrderResponse" name="opNewJakalaOrderResponse" /> 
+  </wsdl:operation> 
+ </wsdl:portType> 
+ <wsdl:binding name="WS_LOY_NEW_JAKALA_ORDERSoap" type="eb:WS_LOY_NEW_JAKALA_ORDERSoap"> 
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /> 
+  <wsdl:operation name="opNewJakalaOrder"> 
+   <soap:operation soapAction="WS_LOY_NEW_JAKALA_ORDER/opNewJakalaOrder" style="document" /> 
+   <wsdl:input name="opNewJakalaOrderRequest"> 
+    <soap:body use="literal" /> 
+   </wsdl:input> 
+   <wsdl:output name="opNewJakalaOrderResponse"> 
+    <soap:body use="literal" /> 
+   </wsdl:output> 
+  </wsdl:operation> 
+ </wsdl:binding> 
+ <wsdl:service name="WS_LOY_NEW_JAKALA_ORDER"> 
+  <wsdl:port binding="eb:WS_LOY_NEW_JAKALA_ORDERSoap" name="WS_LOY_NEW_JAKALA_ORDERSoap"> 
+   <soap:address location="http://CAMBIAMI-AM:9100/wsexistbus/openws/WS_LOY_NEW_JAKALA_ORDER" /> 
+  </wsdl:port> 
+ </wsdl:service> 
+</wsdl:definitions>

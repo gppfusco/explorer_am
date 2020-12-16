@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <wsdl:types> 
+  <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus"> 
+   <xsd:element name="OP_ASYNC_TEST"> 
+    <xsd:complexType> 
+     <xsd:sequence /> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="OP_ASYNC_TESTResponse"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="esito" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="descrizione_esito" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="tid" type="xsd:string" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:schema> 
+ </wsdl:types> 
+ <wsdl:message name="OP_ASYNC_TESTRequest"> 
+  <wsdl:part element="eb:OP_ASYNC_TEST" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:message name="OP_ASYNC_TESTResponse"> 
+  <wsdl:part element="eb:OP_ASYNC_TESTResponse" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:portType name="WS_ASYNC_TESTSoap"> 
+  <wsdl:operation name="OP_ASYNC_TEST"> 
+   <wsdl:input message="eb:OP_ASYNC_TESTRequest" name="OP_ASYNC_TESTRequest" /> 
+   <wsdl:output message="eb:OP_ASYNC_TESTResponse" name="OP_ASYNC_TESTResponse" /> 
+  </wsdl:operation> 
+ </wsdl:portType> 
+ <wsdl:binding name="WS_ASYNC_TESTSoap" type="eb:WS_ASYNC_TESTSoap"> 
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /> 
+  <wsdl:operation name="OP_ASYNC_TEST"> 
+   <soap:operation soapAction="WS_ASYNC_TEST/OP_ASYNC_TEST" style="document" /> 
+   <wsdl:input name="OP_ASYNC_TESTRequest"> 
+    <soap:body use="literal" /> 
+   </wsdl:input> 
+   <wsdl:output name="OP_ASYNC_TESTResponse"> 
+    <soap:body use="literal" /> 
+   </wsdl:output> 
+  </wsdl:operation> 
+ </wsdl:binding> 
+ <wsdl:service name="WS_ASYNC_TEST"> 
+  <wsdl:port binding="eb:WS_ASYNC_TESTSoap" name="WS_ASYNC_TESTSoap"> 
+   <soap:address location="http://CAMBIAMI-AM:9100/wsexistbus/openws/WS_ASYNC_TEST" /> 
+  </wsdl:port> 
+ </wsdl:service> 
+</wsdl:definitions>

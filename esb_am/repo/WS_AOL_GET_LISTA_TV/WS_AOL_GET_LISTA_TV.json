@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_AOL_GET_LISTA_TV",
+    "name" : "WS_AOL_GET_LISTA_TV",
+    "remoteName" : "WS_AOL_GET_LISTA_TV",
+    "localPath" : "esb_am\\repo\\WS_AOL_GET_LISTA_TV",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_AOL_GET_LISTA_TV?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

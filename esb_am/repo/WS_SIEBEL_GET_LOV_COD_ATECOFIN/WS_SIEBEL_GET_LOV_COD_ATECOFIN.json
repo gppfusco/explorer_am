@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_SIEBEL_GET_LOV_COD_ATECOFIN",
+    "name" : "WS_SIEBEL_GET_LOV_COD_ATECOFIN",
+    "remoteName" : "WS_SIEBEL_GET_LOV_COD_ATECOFIN",
+    "localPath" : "esb_am\\repo\\WS_SIEBEL_GET_LOV_COD_ATECOFIN",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_SIEBEL_GET_LOV_COD_ATECOFIN?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

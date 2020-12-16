@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_SELFCARE_LEGGIDATICONTRATTO",
+    "name" : "WS_SELFCARE_LEGGIDATICONTRATTO",
+    "remoteName" : "WS_SELFCARE_LEGGIDATICONTRATTO",
+    "localPath" : "esb_am\\repo\\WS_SELFCARE_LEGGIDATICONTRATTO",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_SELFCARE_LEGGIDATICONTRATTO?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

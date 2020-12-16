@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:eb="http://www.reply.it/existbus" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.reply.it/existbus" elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+ <xs:complexType name="DocumentDataIn"> 
+  <xs:sequence> 
+   <xs:element name="CodiceContratto" minOccurs="1"> 
+    <xs:simpleType> 
+     <xs:restriction base="xs:string"> 
+      <xs:length value="15" /> 
+     </xs:restriction> 
+    </xs:simpleType> 
+   </xs:element> 
+   <xs:element name="TimeoutID" minOccurs="1"> 
+    <xs:simpleType> 
+     <xs:restriction base="xs:string"> 
+      <xs:length value="50" /> 
+     </xs:restriction> 
+    </xs:simpleType> 
+   </xs:element> 
+   <xs:element name="ListOfFields" minOccurs="0"> 
+    <xs:complexType> 
+     <xs:sequence> 
+      <xs:element name="Field" minOccurs="0" maxOccurs="unbounded"> 
+       <xs:complexType> 
+        <xs:sequence> 
+         <xs:element name="Nome" type="xs:string" minOccurs="0" /> 
+         <xs:element name="Valore" type="xs:string" minOccurs="0" /> 
+         <xs:element name="Tipo" type="xs:string" minOccurs="0" /> 
+        </xs:sequence> 
+       </xs:complexType> 
+      </xs:element> 
+     </xs:sequence> 
+    </xs:complexType> 
+   </xs:element> 
+  </xs:sequence> 
+ </xs:complexType> 
+ <xs:complexType name="DocumentDataOut"> 
+  <xs:sequence> 
+   <xs:element name="Esito" minOccurs="1"> 
+    <xs:simpleType> 
+     <xs:restriction base="xs:string"> 
+      <xs:enumeration value="0" /> 
+      <xs:enumeration value="1" /> 
+     </xs:restriction> 
+    </xs:simpleType> 
+   </xs:element> 
+   <xs:element name="DescrizioneEsito" type="xs:string" minOccurs="0" /> 
+   <xs:element name="ListOfPromo" minOccurs="0"> 
+    <xs:complexType> 
+     <xs:sequence> 
+      <xs:element name="Promo" minOccurs="0" maxOccurs="unbounded"> 
+       <xs:complexType> 
+        <xs:sequence> 
+         <xs:element name="CausaleCessazione" minOccurs="0"> 
+          <xs:simpleType> 
+           <xs:restriction base="xs:string"> 
+            <xs:length value="100" /> 
+           </xs:restriction> 
+          </xs:simpleType> 
+         </xs:element> 
+         <xs:element name="DataAdesione" minOccurs="0"> 
+          <xs:simpleType> 
+           <xs:restriction base="xs:string"> 
+            <xs:enumeration value="0" /> 
+            <xs:enumeration value="1" /> 
+           </xs:restriction> 
+          </xs:simpleType> 
+         </xs:element> 
+         <xs:element name="DataFine" type="xs:date" minOccurs="0" /> 
+         <xs:element name="DataFineVincoloDowngradeFee" type="xs:date" minOccurs="0" /> 
+         <xs:element name="DataFineVincoloExitFee" type="xs:date" minOccurs="0" /> 
+         <xs:element name="DataInizio" type="xs:date" minOccurs="0" /> 
+         <xs:element name="DataRiattivazionePromo" type="xs:date" minOccurs="0" /> 
+         <xs:element name="DettaglioErrore" type="xs:string" minOccurs="0" /> 
+         <xs:element name="DurataFinestradiExitFree" type="xs:int" minOccurs="0" /> 
+         <xs:element name="DurataIncompatibilitaVOD" type="xs:int" minOccurs="0" /> 
+         <xs:element name="DurataLegame" type="xs:string" minOccurs="0" /> 
+         <xs:element name="DurataPromo" type="xs:int" minOccurs="0" /> 
+         <xs:element name="DurataVincoloDowngradeFee" type="xs:int" minOccurs="0" /> 
+         <xs:element name="DurataVincoloPromo" type="xs:int" minOccurs="0" /> 
+         <xs:element name="EventoAttivazione" type="xs:boolean" minOccurs="0" /> 
+         <xs:element name="ExitFee" type="xs:boolean" minOccurs="0" /> 
+         <xs:element name="FlagPrepagata" type="xs:boolean" minOccurs="0" /> 
+         <xs:element name="FrasePromozioneTecnica" type="xs:string" minOccurs="0" /> 
+         <xs:element name="IdPromoSales" type="xs:string" minOccurs="0" /> 
+         <xs:element name="NumeroOrdine" type="xs:string" minOccurs="0" /> 
+         <xs:element name="PerditaprivilegiCCRIDcambioMoP" type="xs:string" minOccurs="0" /> 
+         <xs:element name="PromoConnessa" type="xs:boolean" minOccurs="0" /> 
+         <xs:element name="PromozioneFatturazione" type="xs:string" minOccurs="0" /> 
+         <xs:element name="PromozioneSKY" type="xs:string" minOccurs="0" /> 
+         <xs:element name="PromozioneTecnica" type="xs:string" minOccurs="0" /> 
+         <xs:element name="RecuperoCostiPromozionali" type="xs:boolean" minOccurs="0" /> 
+         <xs:element name="RiattivazionePromo" type="xs:boolean" minOccurs="0" /> 
+         <xs:element name="Stato" type="xs:string" minOccurs="0" /> 
+         <xs:element name="StatoAttivazione" type="xs:string" minOccurs="0" /> 
+         <xs:element name="StatoEvento" type="xs:string" minOccurs="0" /> 
+         <xs:element name="Tipo" type="xs:string" minOccurs="0" /> 
+         <xs:element name="Ultimoserviziocessato" type="xs:boolean" minOccurs="0" /> 
+         <xs:element name="ListOfFields" minOccurs="0"> 
+          <xs:complexType> 
+           <xs:sequence> 
+            <xs:element name="Field" minOccurs="0" maxOccurs="unbounded"> 
+             <xs:complexType> 
+              <xs:sequence> 
+               <xs:element name="Nome" type="eb:string250" minOccurs="0" /> 
+               <xs:element name="Valore" type="eb:string250" minOccurs="0" /> 
+               <xs:element name="Tipo" type="eb:string250" minOccurs="0" /> 
+              </xs:sequence> 
+             </xs:complexType> 
+            </xs:element> 
+           </xs:sequence> 
+          </xs:complexType> 
+         </xs:element> 
+        </xs:sequence> 
+       </xs:complexType> 
+      </xs:element> 
+     </xs:sequence> 
+    </xs:complexType> 
+   </xs:element> 
+  </xs:sequence> 
+ </xs:complexType> 
+ <xs:element name="DocumentData" type="eb:DocumentDataOut" /> 
+ <xs:element name="COMPLEX_OUTPUT" type="eb:DocumentDataOut" /> 
+ <xs:element name="COMPLEX_INPUT" type="eb:DocumentDataIn" /> 
+ <xs:simpleType name="string250"> 
+  <xs:restriction base="xs:string"> 
+   <xs:maxLength value="250" /> 
+  </xs:restriction> 
+ </xs:simpleType> 
+</xs:schema>

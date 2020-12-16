@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <wsdl:types> 
+  <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus"> 
+   <xsd:complexType name="FMLFieldType"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="unbounded" minOccurs="1" name="valore"> 
+      <xsd:complexType> 
+       <xsd:simpleContent> 
+        <xsd:extension base="xsd:string"> 
+         <xsd:attribute name="occur" type="xsd:string" use="required" /> 
+        </xsd:extension> 
+       </xsd:simpleContent> 
+      </xsd:complexType> 
+     </xsd:element> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:complexType name="FMLComplexInput"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CA_NUM_SC" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CA_OPPV_REFID" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CA_OPPV_DATA_EVENTO" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CA_OPPV_DATA_ACQUISTO" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CA_OPPV_NUMERO_TELEFONO" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CA_OPPV_PROVENIENZA" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="SRVZ_TRANSACTION_ID" type="eb:FMLFieldType" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:complexType name="FMLComplexOutput"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CA_ESITO" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CA_MSG" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CA_OPPV_MSG_CONFERMA" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CA_OPPV_TITOLO_EVENTO" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CA_OPPV_COSTO_EVENTO" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CA_OPPV_COSTO_SERVIZIO" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CA_PROMO_KIND" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CA_PROMO_DETAILS" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CA_OPPV_COSTO_EVENTO_ORIGINALE" type="eb:FMLFieldType" /> 
+     <xsd:any processContents="lax" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:element name="OpConfermaAcquistoNew"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="WS_ACQ_CONF_INPUT" type="eb:FMLComplexInput" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="OpConfermaAcquistoNewResponse"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="WS_ACQ_CONF_OUTPUT" type="eb:FMLComplexOutput" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:schema> 
+ </wsdl:types> 
+ <wsdl:message name="OpConfermaAcquistoNewRequest"> 
+  <wsdl:part element="eb:OpConfermaAcquistoNew" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:message name="OpConfermaAcquistoNewResponse"> 
+  <wsdl:part element="eb:OpConfermaAcquistoNewResponse" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:portType name="WS_CONFERMA_ACQUISTOSoap"> 
+  <wsdl:operation name="OpConfermaAcquistoNew"> 
+   <wsdl:input message="eb:OpConfermaAcquistoNewRequest" name="OpConfermaAcquistoNewRequest" /> 
+   <wsdl:output message="eb:OpConfermaAcquistoNewResponse" name="OpConfermaAcquistoNewResponse" /> 
+  </wsdl:operation> 
+ </wsdl:portType> 
+ <wsdl:binding name="WS_CONFERMA_ACQUISTOSoap" type="eb:WS_CONFERMA_ACQUISTOSoap"> 
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /> 
+  <wsdl:operation name="OpConfermaAcquistoNew"> 
+   <soap:operation soapAction="WS_CONFERMA_ACQUISTO/OpConfermaAcquistoNew" style="document" /> 
+   <wsdl:input name="OpConfermaAcquistoNewRequest"> 
+    <soap:body use="literal" /> 
+   </wsdl:input> 
+   <wsdl:output name="OpConfermaAcquistoNewResponse"> 
+    <soap:body use="literal" /> 
+   </wsdl:output> 
+  </wsdl:operation> 
+ </wsdl:binding> 
+ <wsdl:service name="WS_CONFERMA_ACQUISTO"> 
+  <wsdl:port binding="eb:WS_CONFERMA_ACQUISTOSoap" name="WS_CONFERMA_ACQUISTOSoap"> 
+   <soap:address location="http://CAMBIAMI-AM:9100/wsexistbus/openws/WS_CONFERMA_ACQUISTO" /> 
+  </wsdl:port> 
+ </wsdl:service> 
+</wsdl:definitions>

@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_GETACCINFO_XML_ALE",
+    "name" : "WS_GETACCINFO_XML_ALE",
+    "remoteName" : "WS_GETACCINFO_XML_ALE",
+    "localPath" : "esb_am\\repo\\WS_GETACCINFO_XML_ALE",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_GETACCINFO_XML_ALE?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

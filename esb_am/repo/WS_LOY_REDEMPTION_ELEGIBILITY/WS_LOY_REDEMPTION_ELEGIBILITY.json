@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_LOY_REDEMPTION_ELEGIBILITY",
+    "name" : "WS_LOY_REDEMPTION_ELEGIBILITY",
+    "remoteName" : "WS_LOY_REDEMPTION_ELEGIBILITY",
+    "localPath" : "esb_am\\repo\\WS_LOY_REDEMPTION_ELEGIBILITY",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_LOY_REDEMPTION_ELEGIBILITY?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_WSC_SERVIZIO_PUSH_VOD",
+    "name" : "WS_WSC_SERVIZIO_PUSH_VOD",
+    "remoteName" : "WS_WSC_SERVIZIO_PUSH_VOD",
+    "localPath" : "esb_am\\repo\\WS_WSC_SERVIZIO_PUSH_VOD",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_WSC_SERVIZIO_PUSH_VOD?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "SkyXSD_WS_WSC_SERVIZIO_PUSH_VOD.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

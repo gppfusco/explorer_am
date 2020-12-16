@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <wsdl:types> 
+  <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus"> 
+   <xsd:element name="CTRL_VERSIONE"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="WS_CA_CLIENT_API" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="WS_CA_VERSIONE_SOFTWARE" type="xsd:string" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="CTRL_VERSIONEResponse"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="0" name="WS_SRVZ_RET_CODE" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="0" name="WS_SRVZ_DESCRIZ_ESITO" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="0" name="WS_CA_MSG" type="xsd:string" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:schema> 
+ </wsdl:types> 
+ <wsdl:message name="CTRL_VERSIONERequest"> 
+  <wsdl:part element="eb:CTRL_VERSIONE" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:message name="CTRL_VERSIONEResponse"> 
+  <wsdl:part element="eb:CTRL_VERSIONEResponse" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:portType name="WS_CTRL_VERSIONESoap"> 
+  <wsdl:operation name="CTRL_VERSIONE"> 
+   <wsdl:input message="eb:CTRL_VERSIONERequest" name="CTRL_VERSIONERequest" /> 
+   <wsdl:output message="eb:CTRL_VERSIONEResponse" name="CTRL_VERSIONEResponse" /> 
+  </wsdl:operation> 
+ </wsdl:portType> 
+ <wsdl:binding name="WS_CTRL_VERSIONESoap" type="eb:WS_CTRL_VERSIONESoap"> 
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /> 
+  <wsdl:operation name="CTRL_VERSIONE"> 
+   <soap:operation soapAction="WS_CTRL_VERSIONE/CTRL_VERSIONE" style="document" /> 
+   <wsdl:input name="CTRL_VERSIONERequest"> 
+    <soap:body use="literal" /> 
+   </wsdl:input> 
+   <wsdl:output name="CTRL_VERSIONEResponse"> 
+    <soap:body use="literal" /> 
+   </wsdl:output> 
+  </wsdl:operation> 
+ </wsdl:binding> 
+ <wsdl:service name="WS_CTRL_VERSIONE"> 
+  <wsdl:port binding="eb:WS_CTRL_VERSIONESoap" name="WS_CTRL_VERSIONESoap"> 
+   <soap:address location="http://CAMBIAMI-AM:9100/wsexistbus/openws/WS_CTRL_VERSIONE" /> 
+  </wsdl:port> 
+ </wsdl:service> 
+</wsdl:definitions>

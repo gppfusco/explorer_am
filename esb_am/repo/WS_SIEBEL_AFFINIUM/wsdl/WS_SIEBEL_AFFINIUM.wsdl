@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <wsdl:types> 
+  <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus"> 
+   <xsd:element name="SIEBEL_AFFINIUM_OP"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="SiebelPromotionId" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="SiebelPromotionCode" type="xsd:int" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="Name" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="Desc" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="EffectiveDate" type="xsd:dateTime" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="ExpirationDate" type="xsd:dateTime" /> 
+      <xsd:element maxOccurs="1" minOccurs="0" name="Canale" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="0" name="DummyMode" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="tipoPromozione" type="xsd:string" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="SIEBEL_AFFINIUM_OPResponse"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="Response" type="xsd:string" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:schema> 
+ </wsdl:types> 
+ <wsdl:message name="SIEBEL_AFFINIUM_OPRequest"> 
+  <wsdl:part element="eb:SIEBEL_AFFINIUM_OP" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:message name="SIEBEL_AFFINIUM_OPResponse"> 
+  <wsdl:part element="eb:SIEBEL_AFFINIUM_OPResponse" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:portType name="WS_SIEBEL_AFFINIUMSoap"> 
+  <wsdl:operation name="SIEBEL_AFFINIUM_OP"> 
+   <wsdl:input message="eb:SIEBEL_AFFINIUM_OPRequest" name="SIEBEL_AFFINIUM_OPRequest" /> 
+   <wsdl:output message="eb:SIEBEL_AFFINIUM_OPResponse" name="SIEBEL_AFFINIUM_OPResponse" /> 
+  </wsdl:operation> 
+ </wsdl:portType> 
+ <wsdl:binding name="WS_SIEBEL_AFFINIUMSoap" type="eb:WS_SIEBEL_AFFINIUMSoap"> 
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /> 
+  <wsdl:operation name="SIEBEL_AFFINIUM_OP"> 
+   <soap:operation soapAction="WS_SIEBEL_AFFINIUM/SIEBEL_AFFINIUM_OP" style="document" /> 
+   <wsdl:input name="SIEBEL_AFFINIUM_OPRequest"> 
+    <soap:body use="literal" /> 
+   </wsdl:input> 
+   <wsdl:output name="SIEBEL_AFFINIUM_OPResponse"> 
+    <soap:body use="literal" /> 
+   </wsdl:output> 
+  </wsdl:operation> 
+ </wsdl:binding> 
+ <wsdl:service name="WS_SIEBEL_AFFINIUM"> 
+  <wsdl:port binding="eb:WS_SIEBEL_AFFINIUMSoap" name="WS_SIEBEL_AFFINIUMSoap"> 
+   <soap:address location="http://CAMBIAMI-AM:9100/wsexistbus/openws/WS_SIEBEL_AFFINIUM" /> 
+  </wsdl:port> 
+ </wsdl:service> 
+</wsdl:definitions>

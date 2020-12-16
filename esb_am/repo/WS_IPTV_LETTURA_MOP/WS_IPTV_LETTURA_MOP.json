@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_IPTV_LETTURA_MOP",
+    "name" : "WS_IPTV_LETTURA_MOP",
+    "remoteName" : "WS_IPTV_LETTURA_MOP",
+    "localPath" : "esb_am\\repo\\WS_IPTV_LETTURA_MOP",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_IPTV_LETTURA_MOP?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

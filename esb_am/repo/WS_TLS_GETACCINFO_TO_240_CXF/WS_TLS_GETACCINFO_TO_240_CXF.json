@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_TLS_GETACCINFO_TO_240_CXF",
+    "name" : "WS_TLS_GETACCINFO_TO_240_CXF",
+    "remoteName" : "WS_TLS_GETACCINFO_TO_240_CXF",
+    "localPath" : "esb_am\\repo\\WS_TLS_GETACCINFO_TO_240_CXF",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_TLS_GETACCINFO_TO_240_CXF?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "SkyXSD_WS_LEGGIDATICLIENTE.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

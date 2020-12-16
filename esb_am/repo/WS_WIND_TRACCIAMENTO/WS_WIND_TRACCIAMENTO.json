@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_WIND_TRACCIAMENTO",
+    "name" : "WS_WIND_TRACCIAMENTO",
+    "remoteName" : "WS_WIND_TRACCIAMENTO",
+    "localPath" : "esb_am\\repo\\WS_WIND_TRACCIAMENTO",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_WIND_TRACCIAMENTO?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

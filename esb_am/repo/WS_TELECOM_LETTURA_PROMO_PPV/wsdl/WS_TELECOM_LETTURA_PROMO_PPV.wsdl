@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <wsdl:types> 
+  <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus"> 
+   <xsd:complexType name="FMLFieldType"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="valore"> 
+      <xsd:complexType> 
+       <xsd:simpleContent> 
+        <xsd:extension base="xsd:string"> 
+         <xsd:attribute name="occur" type="xsd:string" use="optional" /> 
+        </xsd:extension> 
+       </xsd:simpleContent> 
+      </xsd:complexType> 
+     </xsd:element> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:complexType name="FMLComplexOutput"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CA_ESITO" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CA_MSG" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CA_APPLIED_PROMO_NUM" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CA_ID_ESIG" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="unbounded" minOccurs="0" name="CA_CATALOG_PROMO" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="unbounded" minOccurs="0" name="CA_DESCRIPT_PROMO" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="unbounded" minOccurs="0" name="CA_INIT_DATE_PROMO" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="unbounded" minOccurs="0" name="CA_END_DATE_PROMO" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="unbounded" minOccurs="0" name="CA_RESIDUAL_PROMO" type="eb:FMLFieldType" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <TypeMapping deserializer-factory-class="org.apache.axis.encoding.ser.SimpleDeserializerFactory" deserializer-provider="custom" java-type="java.lang.String" serializer-factory-class="org.apache.axis.encoding.ser.SimpleSerializerFactory" serializer-provider="custom" xml-type="xsd:string" /> 
+   <TypeMapping deserializer-factory-class="it.reply.sytel.exist.ws.soap.encoding.XMLStringDeserializerFactory" deserializer-provider="custom" java-type="java.lang.String" serializer-factory-class="it.reply.sytel.exist.ws.soap.encoding.XMLStringSerializerFactory" serializer-provider="custom" xml-type="eb:FMLComplexOutput" /> 
+   <xsd:element name="opOppvTelecomReadPromoRequest"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="WS_SMART_CARD" type="xsd:string" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="opOppvTelecomReadPromoRequestResponse"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="COMPLEX_OUTPUT" type="eb:FMLComplexOutput" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:schema> 
+ </wsdl:types> 
+ <wsdl:message name="opOppvTelecomReadPromoRequestRequest"> 
+  <wsdl:part element="eb:opOppvTelecomReadPromoRequest" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:message name="opOppvTelecomReadPromoRequestResponse"> 
+  <wsdl:part element="eb:opOppvTelecomReadPromoRequestResponse" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:portType name="WS_TELECOM_LETTURA_PROMO_PPVSoap"> 
+  <wsdl:operation name="opOppvTelecomReadPromoRequest"> 
+   <wsdl:input message="eb:opOppvTelecomReadPromoRequestRequest" name="opOppvTelecomReadPromoRequestRequest" /> 
+   <wsdl:output message="eb:opOppvTelecomReadPromoRequestResponse" name="opOppvTelecomReadPromoRequestResponse" /> 
+  </wsdl:operation> 
+ </wsdl:portType> 
+ <wsdl:binding name="WS_TELECOM_LETTURA_PROMO_PPVSoap" type="eb:WS_TELECOM_LETTURA_PROMO_PPVSoap"> 
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /> 
+  <wsdl:operation name="opOppvTelecomReadPromoRequest"> 
+   <soap:operation soapAction="WS_TELECOM_LETTURA_PROMO_PPV/opOppvTelecomReadPromoRequest" style="document" /> 
+   <wsdl:input name="opOppvTelecomReadPromoRequestRequest"> 
+    <soap:body use="literal" /> 
+   </wsdl:input> 
+   <wsdl:output name="opOppvTelecomReadPromoRequestResponse"> 
+    <soap:body use="literal" /> 
+   </wsdl:output> 
+  </wsdl:operation> 
+ </wsdl:binding> 
+ <wsdl:service name="WS_TELECOM_LETTURA_PROMO_PPV"> 
+  <wsdl:port binding="eb:WS_TELECOM_LETTURA_PROMO_PPVSoap" name="WS_TELECOM_LETTURA_PROMO_PPVSoap"> 
+   <soap:address location="http://wscolam.sky.it:9100/wsexistbus/ws_iptv_telecom/WS_TELECOM_LETTURA_PROMO_PPV" /> 
+  </wsdl:port> 
+ </wsdl:service> 
+</wsdl:definitions>

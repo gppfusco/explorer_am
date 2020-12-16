@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_TI_SKY_CONFIRM_ORDER",
+    "name" : "WS_TI_SKY_CONFIRM_ORDER",
+    "remoteName" : "WS_TI_SKY_CONFIRM_ORDER",
+    "localPath" : "esb_am\\repo\\WS_TI_SKY_CONFIRM_ORDER",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_TI_SKY_CONFIRM_ORDER?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "xsdTelecom/SkyXSD_TI_AOL_SBL_Confirm_Order.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

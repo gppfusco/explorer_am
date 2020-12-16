@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_IPTV_RICHIESTA_CONF_ANN_SOTTOSCRIZIONE_TRASH",
+    "name" : "WS_IPTV_RICHIESTA_CONF_ANN_SOTTOSCRIZIONE_TRASH",
+    "remoteName" : "WS_IPTV_RICHIESTA_CONF_ANN_SOTTOSCRIZIONE_TRASH",
+    "localPath" : "esb_am\\repo\\WS_IPTV_RICHIESTA_CONF_ANN_SOTTOSCRIZIONE_TRASH",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_IPTV_RICHIESTA_CONF_ANN_SOTTOSCRIZIONE_TRASH?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

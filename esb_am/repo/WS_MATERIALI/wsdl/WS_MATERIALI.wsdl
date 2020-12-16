@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <wsdl:types> 
+  <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus"> 
+   <xsd:complexType name="FMLFieldType"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="unbounded" minOccurs="1" name="valore"> 
+      <xsd:complexType> 
+       <xsd:simpleContent> 
+        <xsd:extension base="xsd:string"> 
+         <xsd:attribute name="occur" type="xsd:string" use="required" /> 
+        </xsd:extension> 
+       </xsd:simpleContent> 
+      </xsd:complexType> 
+     </xsd:element> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:complexType name="FMLComplexOutput"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_CODICE_DEALER" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_PROGR_MANUT" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_CODE_PARTE" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_QTA" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_ACCOUNT_NUMBER" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_NAME" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_INDIRIZZO" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_CAP" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_CITTA" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_PROVINCIA" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_DATA_ORA" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_FLAG_APPARATO" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_TELEFONO" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_ALTRO_NUM_TEL" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_FLG_MODIFICA" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_FLG_PRIORITA" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_PRODOTTO_LOGISTICO" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_PRODUCT_TYPE" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_OPTIONS" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_CPI_CODE" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_WELCOMEKIT" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_CONTRASSEGNO" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_TECNOLOGIA" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_DESTINATARIO" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_INDIRIZZO_ALT" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_CAP_ALT" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_CITTA_ALT" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_PROVINCIA_ALT" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_FLG_CONTRATTO" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_STATO_STB" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_TIPO_LISTINO" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_FLAG_PRONTO_SKY" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_TIPO_LETTERA" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_ERROR_DESCRIPTION" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="WS_TID" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_FLG_RITIRO" type="eb:FMLFieldType" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="CRM_PROMO_SIEBEL" type="eb:FMLFieldType" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:element name="opMateriali"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="WS_CRM_MAGAZ" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="WS_CRM_FORCED" type="xsd:string" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="opMaterialiResponse"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="COMPLEX_OUTPUT" type="eb:FMLComplexOutput" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:schema> 
+ </wsdl:types> 
+ <wsdl:message name="opMaterialiRequest"> 
+  <wsdl:part element="eb:opMateriali" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:message name="opMaterialiResponse"> 
+  <wsdl:part element="eb:opMaterialiResponse" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:portType name="WS_MATERIALISoap"> 
+  <wsdl:operation name="opMateriali"> 
+   <wsdl:input message="eb:opMaterialiRequest" name="opMaterialiRequest" /> 
+   <wsdl:output message="eb:opMaterialiResponse" name="opMaterialiResponse" /> 
+  </wsdl:operation> 
+ </wsdl:portType> 
+ <wsdl:binding name="WS_MATERIALISoap" type="eb:WS_MATERIALISoap"> 
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /> 
+  <wsdl:operation name="opMateriali"> 
+   <soap:operation soapAction="WS_MATERIALI/opMateriali" style="document" /> 
+   <wsdl:input name="opMaterialiRequest"> 
+    <soap:body use="literal" /> 
+   </wsdl:input> 
+   <wsdl:output name="opMaterialiResponse"> 
+    <soap:body use="literal" /> 
+   </wsdl:output> 
+  </wsdl:operation> 
+ </wsdl:binding> 
+ <wsdl:service name="WS_MATERIALI"> 
+  <wsdl:port binding="eb:WS_MATERIALISoap" name="WS_MATERIALISoap"> 
+   <soap:address location="http://CAMBIAMI-AM:9100/wsexistbus/openws/WS_MATERIALI" /> 
+  </wsdl:port> 
+ </wsdl:service> 
+</wsdl:definitions>

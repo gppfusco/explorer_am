@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_WIND_STARTSESSION_SALES",
+    "name" : "WS_WIND_STARTSESSION_SALES",
+    "remoteName" : "WS_WIND_STARTSESSION_SALES",
+    "localPath" : "esb_am\\repo\\WS_WIND_STARTSESSION_SALES",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_WIND_STARTSESSION_SALES?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

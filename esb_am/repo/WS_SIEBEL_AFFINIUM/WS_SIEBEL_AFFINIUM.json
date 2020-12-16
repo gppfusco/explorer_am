@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_SIEBEL_AFFINIUM",
+    "name" : "WS_SIEBEL_AFFINIUM",
+    "remoteName" : "WS_SIEBEL_AFFINIUM",
+    "localPath" : "esb_am\\repo\\WS_SIEBEL_AFFINIUM",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_SIEBEL_AFFINIUM?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

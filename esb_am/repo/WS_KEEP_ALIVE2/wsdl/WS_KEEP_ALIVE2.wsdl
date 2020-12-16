@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <wsdl:types> 
+  <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus"> 
+   <xsd:element name="OP_KEEP_ALIVE"> 
+    <xsd:complexType> 
+     <xsd:sequence /> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="OP_KEEP_ALIVEResponse"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="0" name="ESITO" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="0" name="LOG" type="xsd:string" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:schema> 
+ </wsdl:types> 
+ <wsdl:message name="OP_KEEP_ALIVERequest"> 
+  <wsdl:part element="eb:OP_KEEP_ALIVE" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:message name="OP_KEEP_ALIVEResponse"> 
+  <wsdl:part element="eb:OP_KEEP_ALIVEResponse" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:portType name="WS_KEEP_ALIVE2Soap"> 
+  <wsdl:operation name="OP_KEEP_ALIVE"> 
+   <wsdl:input message="eb:OP_KEEP_ALIVERequest" name="OP_KEEP_ALIVERequest" /> 
+   <wsdl:output message="eb:OP_KEEP_ALIVEResponse" name="OP_KEEP_ALIVEResponse" /> 
+  </wsdl:operation> 
+ </wsdl:portType> 
+ <wsdl:binding name="WS_KEEP_ALIVE2Soap" type="eb:WS_KEEP_ALIVE2Soap"> 
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /> 
+  <wsdl:operation name="OP_KEEP_ALIVE"> 
+   <soap:operation soapAction="WS_KEEP_ALIVE2/OP_KEEP_ALIVE" style="document" /> 
+   <wsdl:input name="OP_KEEP_ALIVERequest"> 
+    <soap:body use="literal" /> 
+   </wsdl:input> 
+   <wsdl:output name="OP_KEEP_ALIVEResponse"> 
+    <soap:body use="literal" /> 
+   </wsdl:output> 
+  </wsdl:operation> 
+ </wsdl:binding> 
+ <wsdl:service name="WS_KEEP_ALIVE2"> 
+  <wsdl:port binding="eb:WS_KEEP_ALIVE2Soap" name="WS_KEEP_ALIVE2Soap"> 
+   <soap:address location="http://CAMBIAMI-AM:9100/wsexistbus/openws/WS_KEEP_ALIVE2" /> 
+  </wsdl:port> 
+ </wsdl:service> 
+</wsdl:definitions>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <wsdl:types> 
+  <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus"> 
+   <xsd:element name="ENABLE_OPPV"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="0" name="WS_TRANS_ID" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="0" name="WS_TP_CODE" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="0" name="WS_SMART_CARD" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="WS_REFID" type="xsd:string" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="ENABLE_OPPVResponse"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="0" name="WS_RESULT" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="0" name="WS_DESCRIPTION" type="xsd:string" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:schema> 
+ </wsdl:types> 
+ <wsdl:message name="ENABLE_OPPVRequest"> 
+  <wsdl:part element="eb:ENABLE_OPPV" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:message name="ENABLE_OPPVResponse"> 
+  <wsdl:part element="eb:ENABLE_OPPVResponse" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:portType name="EnableOPPVSoap"> 
+  <wsdl:operation name="ENABLE_OPPV"> 
+   <wsdl:input message="eb:ENABLE_OPPVRequest" name="ENABLE_OPPVRequest" /> 
+   <wsdl:output message="eb:ENABLE_OPPVResponse" name="ENABLE_OPPVResponse" /> 
+  </wsdl:operation> 
+ </wsdl:portType> 
+ <wsdl:binding name="EnableOPPVSoap" type="eb:EnableOPPVSoap"> 
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /> 
+  <wsdl:operation name="ENABLE_OPPV"> 
+   <soap:operation soapAction="EnableOPPV/ENABLE_OPPV" style="document" /> 
+   <wsdl:input name="ENABLE_OPPVRequest"> 
+    <soap:body use="literal" /> 
+   </wsdl:input> 
+   <wsdl:output name="ENABLE_OPPVResponse"> 
+    <soap:body use="literal" /> 
+   </wsdl:output> 
+  </wsdl:operation> 
+ </wsdl:binding> 
+ <wsdl:service name="EnableOPPV"> 
+  <wsdl:port binding="eb:EnableOPPVSoap" name="EnableOPPVSoap"> 
+   <soap:address location="http://CAMBIAMI-AM:9100/wsexistbus/openws/EnableOPPV" /> 
+  </wsdl:port> 
+ </wsdl:service> 
+</wsdl:definitions>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <wsdl:types> 
+  <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus"> 
+   <xsd:complexType name="requestCheckContr"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="PartNumber" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="OrderNumber" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="connId" type="xsd:string" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:complexType name="Address"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="Nome" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="Cognome" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="Via" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="Citta" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="Provincia" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CAP" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="Nazione" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="Presso" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="Telefono" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="NoteConsegna" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="Cellulare" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="EMail" type="xsd:string" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:complexType name="Contracts"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="unbounded" minOccurs="1" name="Contract" type="eb:Contract" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:complexType name="Contract"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="OrderNum" type="xsd:string" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:complexType name="responseCheckContr"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="Root" type="eb:Root" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:complexType name="requestCheckCli"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="PartNumber" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="AccountNumber" type="xsd:string" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:complexType name="responseCheckCli"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="Root" type="eb:Root" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:complexType name="Root"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="ErrorCode" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="ErrorDescription" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="StatusCode" type="xsd:string" /> 
+     <xsd:element maxOccurs="unbounded" minOccurs="0" name="Address" type="eb:Address" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="Contracts" type="eb:Contracts" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:element name="OpCheckContratto"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="COMPLEX_INPUT" type="eb:requestCheckContr" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="OpCheckContrattoResponse"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="COMPLEX_OUTPUT" type="eb:responseCheckContr" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="OpCheckCliente"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="COMPLEX_INPUT" type="eb:requestCheckCli" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="OpCheckClienteResponse"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="COMPLEX_OUTPUT" type="eb:responseCheckCli" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:schema> 
+ </wsdl:types> 
+ <wsdl:message name="OpCheckContrattoRequest"> 
+  <wsdl:part element="eb:OpCheckContratto" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:message name="OpCheckContrattoResponse"> 
+  <wsdl:part element="eb:OpCheckContrattoResponse" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:message name="OpCheckClienteRequest"> 
+  <wsdl:part element="eb:OpCheckCliente" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:message name="OpCheckClienteResponse"> 
+  <wsdl:part element="eb:OpCheckClienteResponse" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:portType name="WS_LOY_REDEMPTION_ELEGIBILITYSoap"> 
+  <wsdl:operation name="OpCheckContratto"> 
+   <wsdl:input message="eb:OpCheckContrattoRequest" name="OpCheckContrattoRequest" /> 
+   <wsdl:output message="eb:OpCheckContrattoResponse" name="OpCheckContrattoResponse" /> 
+  </wsdl:operation> 
+  <wsdl:operation name="OpCheckCliente"> 
+   <wsdl:input message="eb:OpCheckClienteRequest" name="OpCheckClienteRequest" /> 
+   <wsdl:output message="eb:OpCheckClienteResponse" name="OpCheckClienteResponse" /> 
+  </wsdl:operation> 
+ </wsdl:portType> 
+ <wsdl:binding name="WS_LOY_REDEMPTION_ELEGIBILITYSoap" type="eb:WS_LOY_REDEMPTION_ELEGIBILITYSoap"> 
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /> 
+  <wsdl:operation name="OpCheckContratto"> 
+   <soap:operation soapAction="WS_LOY_REDEMPTION_ELEGIBILITY/OpCheckContratto" style="document" /> 
+   <wsdl:input name="OpCheckContrattoRequest"> 
+    <soap:body use="literal" /> 
+   </wsdl:input> 
+   <wsdl:output name="OpCheckContrattoResponse"> 
+    <soap:body use="literal" /> 
+   </wsdl:output> 
+  </wsdl:operation> 
+  <wsdl:operation name="OpCheckCliente"> 
+   <soap:operation soapAction="WS_LOY_REDEMPTION_ELEGIBILITY/OpCheckCliente" style="document" /> 
+   <wsdl:input name="OpCheckClienteRequest"> 
+    <soap:body use="literal" /> 
+   </wsdl:input> 
+   <wsdl:output name="OpCheckClienteResponse"> 
+    <soap:body use="literal" /> 
+   </wsdl:output> 
+  </wsdl:operation> 
+ </wsdl:binding> 
+ <wsdl:service name="WS_LOY_REDEMPTION_ELEGIBILITY"> 
+  <wsdl:port binding="eb:WS_LOY_REDEMPTION_ELEGIBILITYSoap" name="WS_LOY_REDEMPTION_ELEGIBILITYSoap"> 
+   <soap:address location="http://CAMBIAMI-AM:9100/wsexistbus/openws/WS_LOY_REDEMPTION_ELEGIBILITY" /> 
+  </wsdl:port> 
+ </wsdl:service> 
+</wsdl:definitions>

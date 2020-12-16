@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <wsdl:types> 
+  <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus"> 
+   <xsd:complexType name="VerifySkyIpTvActivabilityResponseBean"> 
+    <xsd:sequence> 
+     <xsd:element name="anagInfos" nillable="true" type="eb:ArrayOf_tns1_SkyPropertyBean" /> 
+     <xsd:element name="errorCode" nillable="true" type="xsd:string" /> 
+     <xsd:element name="errorMsg" nillable="true" type="xsd:string" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:complexType name="ArrayOf_tns1_SkyPropertyBean"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="unbounded" minOccurs="0" name="item" type="eb:SkyPropertyBean" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:complexType name="SkyPropertyBean"> 
+    <xsd:sequence> 
+     <xsd:element name="propertyName" nillable="true" type="xsd:string" /> 
+     <xsd:element name="propertyValue" nillable="true" type="xsd:string" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:element name="SIEBEL_FW_OPERATION"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="cfPiva" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="accountNo" type="xsd:string" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="SIEBEL_FW_OPERATIONResponse"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="COMPLEX_OUTPUT" type="eb:VerifySkyIpTvActivabilityResponseBean" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:schema> 
+ </wsdl:types> 
+ <wsdl:message name="SIEBEL_FW_OPERATIONRequest"> 
+  <wsdl:part element="eb:SIEBEL_FW_OPERATION" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:message name="SIEBEL_FW_OPERATIONResponse"> 
+  <wsdl:part element="eb:SIEBEL_FW_OPERATIONResponse" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:portType name="WS_IPTV_VERIFICA_ATTIVABILITASoap"> 
+  <wsdl:operation name="SIEBEL_FW_OPERATION"> 
+   <wsdl:input message="eb:SIEBEL_FW_OPERATIONRequest" name="SIEBEL_FW_OPERATIONRequest" /> 
+   <wsdl:output message="eb:SIEBEL_FW_OPERATIONResponse" name="SIEBEL_FW_OPERATIONResponse" /> 
+  </wsdl:operation> 
+ </wsdl:portType> 
+ <wsdl:binding name="WS_IPTV_VERIFICA_ATTIVABILITASoap" type="eb:WS_IPTV_VERIFICA_ATTIVABILITASoap"> 
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /> 
+  <wsdl:operation name="SIEBEL_FW_OPERATION"> 
+   <soap:operation soapAction="WS_IPTV_VERIFICA_ATTIVABILITA/SIEBEL_FW_OPERATION" style="document" /> 
+   <wsdl:input name="SIEBEL_FW_OPERATIONRequest"> 
+    <soap:body use="literal" /> 
+   </wsdl:input> 
+   <wsdl:output name="SIEBEL_FW_OPERATIONResponse"> 
+    <soap:body use="literal" /> 
+   </wsdl:output> 
+  </wsdl:operation> 
+ </wsdl:binding> 
+ <wsdl:service name="WS_IPTV_VERIFICA_ATTIVABILITA"> 
+  <wsdl:port binding="eb:WS_IPTV_VERIFICA_ATTIVABILITASoap" name="WS_IPTV_VERIFICA_ATTIVABILITASoap"> 
+   <soap:address location="http://CAMBIAMI-AM:9100/wsexistbus/openws/WS_IPTV_VERIFICA_ATTIVABILITA" /> 
+  </wsdl:port> 
+ </wsdl:service> 
+</wsdl:definitions>

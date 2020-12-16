@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_IPTV_REFRESH_SMC",
+    "name" : "WS_IPTV_REFRESH_SMC",
+    "remoteName" : "WS_IPTV_REFRESH_SMC",
+    "localPath" : "esb_am\\repo\\WS_IPTV_REFRESH_SMC",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_IPTV_REFRESH_SMC?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

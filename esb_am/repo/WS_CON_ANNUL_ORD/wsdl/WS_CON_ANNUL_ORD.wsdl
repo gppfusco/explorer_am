@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <wsdl:types> 
+  <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus"> 
+   <xsd:element name="OP_CON_ANNUL_ORD"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="CRM_MAGAZ" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="WS_TID" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="CRM_FORCED" type="xsd:string" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="OP_CON_ANNUL_ORDResponse"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="0" name="ESITO" type="xsd:string" /> 
+      <xsd:element maxOccurs="1" minOccurs="0" name="DESCRIZIONE_ESITO" type="xsd:string" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:schema> 
+ </wsdl:types> 
+ <wsdl:message name="OP_CON_ANNUL_ORDRequest"> 
+  <wsdl:part element="eb:OP_CON_ANNUL_ORD" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:message name="OP_CON_ANNUL_ORDResponse"> 
+  <wsdl:part element="eb:OP_CON_ANNUL_ORDResponse" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:portType name="WS_CON_ANNUL_ORDSoap"> 
+  <wsdl:operation name="OP_CON_ANNUL_ORD"> 
+   <wsdl:input message="eb:OP_CON_ANNUL_ORDRequest" name="OP_CON_ANNUL_ORDRequest" /> 
+   <wsdl:output message="eb:OP_CON_ANNUL_ORDResponse" name="OP_CON_ANNUL_ORDResponse" /> 
+  </wsdl:operation> 
+ </wsdl:portType> 
+ <wsdl:binding name="WS_CON_ANNUL_ORDSoap" type="eb:WS_CON_ANNUL_ORDSoap"> 
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /> 
+  <wsdl:operation name="OP_CON_ANNUL_ORD"> 
+   <soap:operation soapAction="WS_CON_ANNUL_ORD/OP_CON_ANNUL_ORD" style="document" /> 
+   <wsdl:input name="OP_CON_ANNUL_ORDRequest"> 
+    <soap:body use="literal" /> 
+   </wsdl:input> 
+   <wsdl:output name="OP_CON_ANNUL_ORDResponse"> 
+    <soap:body use="literal" /> 
+   </wsdl:output> 
+  </wsdl:operation> 
+ </wsdl:binding> 
+ <wsdl:service name="WS_CON_ANNUL_ORD"> 
+  <wsdl:port binding="eb:WS_CON_ANNUL_ORDSoap" name="WS_CON_ANNUL_ORDSoap"> 
+   <soap:address location="http://CAMBIAMI-AM:9100/wsexistbus/openws/WS_CON_ANNUL_ORD" /> 
+  </wsdl:port> 
+ </wsdl:service> 
+</wsdl:definitions>

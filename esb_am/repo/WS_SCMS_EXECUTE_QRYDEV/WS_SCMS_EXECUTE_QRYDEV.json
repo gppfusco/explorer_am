@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_SCMS_EXECUTE_QRYDEV",
+    "name" : "WS_SCMS_EXECUTE_QRYDEV",
+    "remoteName" : "WS_SCMS_EXECUTE_QRYDEV",
+    "localPath" : "esb_am\\repo\\WS_SCMS_EXECUTE_QRYDEV",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_SCMS_EXECUTE_QRYDEV?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

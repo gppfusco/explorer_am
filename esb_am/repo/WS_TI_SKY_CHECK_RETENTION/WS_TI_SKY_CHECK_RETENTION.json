@@ -1,0 +1,21 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_TI_SKY_CHECK_RETENTION",
+    "name" : "WS_TI_SKY_CHECK_RETENTION",
+    "remoteName" : "WS_TI_SKY_CHECK_RETENTION",
+    "localPath" : "esb_am\\repo\\WS_TI_SKY_CHECK_RETENTION",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_TI_SKY_CHECK_RETENTION?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "xsdTelecom/SkyXSD_TI_SBL_AOL_Check_Retention.xsd",
+        "xsdNameSpace" : "http://www.reply.it/existbus"
+      } ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

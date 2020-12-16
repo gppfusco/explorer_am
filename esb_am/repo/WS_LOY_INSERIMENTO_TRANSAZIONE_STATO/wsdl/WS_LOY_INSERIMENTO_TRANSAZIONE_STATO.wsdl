@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+ <wsdl:types> 
+  <xsd:schema elementFormDefault="qualified" targetNamespace="http://www.reply.it/existbus" xmlns:eb="http://www.reply.it/existbus"> 
+   <xsd:complexType name="DocumentDataIN"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CodiceOrdineJakala" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CodiceOrdineSKY" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CodicePartner" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="CodiceUser" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="Corriere" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="DataUltimoCambioStato" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="IDMessaggio" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="Note" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="StatoOrdine" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="TrackingID" type="xsd:string" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:complexType name="Root"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="ErrorCode" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="ErrorDescription" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="0" name="TransictionID" type="xsd:string" /> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="StatusCode" type="xsd:string" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:complexType name="DocumentData"> 
+    <xsd:sequence> 
+     <xsd:element maxOccurs="1" minOccurs="1" name="Root" type="eb:Root" /> 
+    </xsd:sequence> 
+   </xsd:complexType> 
+   <xsd:element name="SIEBEL_ADP_OPERATION"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="COMPLEX_INPUT" type="eb:DocumentDataIN" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+   <xsd:element name="SIEBEL_ADP_OPERATIONResponse"> 
+    <xsd:complexType> 
+     <xsd:sequence> 
+      <xsd:element maxOccurs="1" minOccurs="1" name="COMPLEX_OUTPUT" type="eb:DocumentData" /> 
+     </xsd:sequence> 
+    </xsd:complexType> 
+   </xsd:element> 
+  </xsd:schema> 
+ </wsdl:types> 
+ <wsdl:message name="SIEBEL_ADP_OPERATIONRequest"> 
+  <wsdl:part element="eb:SIEBEL_ADP_OPERATION" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:message name="SIEBEL_ADP_OPERATIONResponse"> 
+  <wsdl:part element="eb:SIEBEL_ADP_OPERATIONResponse" name="parameters" /> 
+ </wsdl:message> 
+ <wsdl:portType name="WS_LOY_INSERIMENTO_TRANSAZIONE_STATOSoap"> 
+  <wsdl:operation name="SIEBEL_ADP_OPERATION"> 
+   <wsdl:input message="eb:SIEBEL_ADP_OPERATIONRequest" name="SIEBEL_ADP_OPERATIONRequest" /> 
+   <wsdl:output message="eb:SIEBEL_ADP_OPERATIONResponse" name="SIEBEL_ADP_OPERATIONResponse" /> 
+  </wsdl:operation> 
+ </wsdl:portType> 
+ <wsdl:binding name="WS_LOY_INSERIMENTO_TRANSAZIONE_STATOSoap" type="eb:WS_LOY_INSERIMENTO_TRANSAZIONE_STATOSoap"> 
+  <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" /> 
+  <wsdl:operation name="SIEBEL_ADP_OPERATION"> 
+   <soap:operation soapAction="WS_LOY_INSERIMENTO_TRANSAZIONE_STATO/SIEBEL_ADP_OPERATION" style="document" /> 
+   <wsdl:input name="SIEBEL_ADP_OPERATIONRequest"> 
+    <soap:body use="literal" /> 
+   </wsdl:input> 
+   <wsdl:output name="SIEBEL_ADP_OPERATIONResponse"> 
+    <soap:body use="literal" /> 
+   </wsdl:output> 
+  </wsdl:operation> 
+ </wsdl:binding> 
+ <wsdl:service name="WS_LOY_INSERIMENTO_TRANSAZIONE_STATO"> 
+ </wsdl:service>
+</wsdl:definitions>

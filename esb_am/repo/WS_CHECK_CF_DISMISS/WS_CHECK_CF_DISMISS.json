@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_CHECK_CF_DISMISS",
+    "name" : "WS_CHECK_CF_DISMISS",
+    "remoteName" : "WS_CHECK_CF_DISMISS",
+    "localPath" : "esb_am\\repo\\WS_CHECK_CF_DISMISS",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_CHECK_CF_DISMISS?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}

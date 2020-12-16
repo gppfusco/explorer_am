@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://wscolam.sky.it/wsexistbus/ws/",
+    "path" : "WS_SIEBEL_READPROMO_NEW",
+    "name" : "WS_SIEBEL_READPROMO_NEW",
+    "remoteName" : "WS_SIEBEL_READPROMO_NEW",
+    "localPath" : "esb_am\\repo\\WS_SIEBEL_READPROMO_NEW",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://wscolam.sky.it/wsexistbus/ws/WS_SIEBEL_READPROMO_NEW?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "DATA_MANIPULATION",
+    "compressionSupported" : false,
+    "bufferingSupported" : false
+  }
+}
