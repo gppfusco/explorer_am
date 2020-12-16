@@ -1,0 +1,34 @@
+{
+  "RestApi" : {
+    "type" : "REST",
+    "endpoint" : "https://ws.osbcol.sky.it/osbam",
+    "path" : "/services/infocert/api/invoices",
+    "name" : "InfocertProject_invoices_proxy_PS_REST_API_INVOICES",
+    "remoteName" : "ProxyService/InfocertProject/invoices/proxy/PS_REST_API_INVOICES",
+    "localPath" : "osb_am\\repo\\InfocertProject\\invoices\\PS_REST_API_INVOICES",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbam/services/infocert/api/invoices?WADL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "MDW_CDM/EnterpriseServices/InfocertProject/invoices/xsd/XSD_INVOICE",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ],
+      "soapApiSpec" : {
+        "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbam",
+        "xsdSchemas" : [ {
+          "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        }, {
+          "xsdPath" : "/MDW_CDM/EnterpriseServices/InfocertProject/invoices/xsd/XSD_INVOICE",
+          "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+        } ]
+      }
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

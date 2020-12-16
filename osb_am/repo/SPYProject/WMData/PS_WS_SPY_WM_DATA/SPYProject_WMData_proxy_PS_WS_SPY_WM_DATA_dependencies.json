@@ -1,0 +1,137 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SPYProject/WMData/proxy/PS_WS_SPY_WM_DATA",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/SPYProject/WMData/wsdl/WS_SPY_WM_DATA" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/SPYProject/WMData/wsdl/WS_SPY_WM_DATA",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SPYProject/WMData/xsd/XSD_SPY_WM_DATA" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SPYProject/WMData/xsd/XSD_SPY_WM_DATA",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/SPYProject/WMData/pipeline/PL_WS_SPY_WM_DATA" : {
+        "label" : "Pipeline/SPYProject/WMData/pipeline/PL_WS_SPY_WM_DATA",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/SPYProject/WMData/wsdl/WS_SPY_WM_DATA" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/SPYProject/WMData/wsdl/WS_SPY_WM_DATA",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SPYProject/WMData/xsd/XSD_SPY_WM_DATA" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SPYProject/WMData/xsd/XSD_SPY_WM_DATA",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/SPYProject/WMData/pipeline/PL_INTERNAL_SPY_GET_WM_DATA" : {
+            "label" : "Pipeline/SPYProject/WMData/pipeline/PL_INTERNAL_SPY_GET_WM_DATA",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/EnterpriseServices/SPYProject/WMData/wsdl/WS_SPY_WM_DATA" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/SPYProject/WMData/wsdl/WS_SPY_WM_DATA",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SPYProject/WMData/xsd/XSD_SPY_WM_DATA" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SPYProject/WMData/xsd/XSD_SPY_WM_DATA",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/SPYProject/WMData/businessServices/BS_SPY_GET_WM_DATA" : {
+                "label" : "BusinessService/SPYProject/WMData/businessServices/BS_SPY_GET_WM_DATA",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/SPY/WS_FPS_GET_WM_DATA/SpyWsImpl" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SPY/WS_FPS_GET_WM_DATA/SpyWsImpl",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/SPYProject/WMData/transformations/createRequestGetWMData" : {
+                "label" : "Xquery/SPYProject/WMData/transformations/createRequestGetWMData",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/SPYProject/WMData/transformations/createResponseGetWMData" : {
+                "label" : "Xquery/SPYProject/WMData/transformations/createResponseGetWMData",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

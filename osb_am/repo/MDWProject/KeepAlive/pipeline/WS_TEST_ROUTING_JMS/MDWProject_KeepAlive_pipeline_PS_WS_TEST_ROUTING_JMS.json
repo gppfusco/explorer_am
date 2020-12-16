@@ -1,0 +1,18 @@
+{
+  "MessagingApi" : {
+    "type" : "Messaging",
+    "endpoint" : "https://ws.osbcol.sky.it/osbam",
+    "path" : "/PS_KEEP_ALIVE",
+    "name" : "MDWProject_KeepAlive_pipeline_PS_WS_TEST_ROUTING_JMS",
+    "remoteName" : "ProxyService/MDWProject/KeepAlive/pipeline/PS_WS_TEST_ROUTING_JMS",
+    "localPath" : "osb_am\\repo\\MDWProject\\KeepAlive\\pipeline\\WS_TEST_ROUTING_JMS",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbam",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

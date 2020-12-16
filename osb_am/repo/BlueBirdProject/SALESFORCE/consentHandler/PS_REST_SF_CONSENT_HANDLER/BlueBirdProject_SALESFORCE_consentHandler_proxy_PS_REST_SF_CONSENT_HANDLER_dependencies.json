@@ -1,0 +1,129 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/SALESFORCE/consentHandler/proxy/PS_REST_SF_CONSENT_HANDLER",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WADL/BlueBirdProject/Resources/PS_REST_SF_CONSENT_HANDLER" : {
+        "label" : "WADL/BlueBirdProject/Resources/PS_REST_SF_CONSENT_HANDLER",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "WSDL/BlueBirdProject/Resources/PS_REST_SF_CONSENT_HANDLER" : {
+        "label" : "WSDL/BlueBirdProject/Resources/PS_REST_SF_CONSENT_HANDLER",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/consentHandler/xsd/XSD_SF_CONSENT_HANDLER" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/consentHandler/xsd/XSD_SF_CONSENT_HANDLER",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/BlueBirdProject/SALESFORCE/consentHandler/pipeline/PL_REST_SF_CONSENT_HANDLER" : {
+        "label" : "Pipeline/BlueBirdProject/SALESFORCE/consentHandler/pipeline/PL_REST_SF_CONSENT_HANDLER",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/BlueBirdProject/SALESFORCE/consentHandler/pipeline/PL_INTERNAL_CONSENT_HANDLER_ENQUEUE" : {
+            "label" : "Pipeline/BlueBirdProject/SALESFORCE/consentHandler/pipeline/PL_INTERNAL_CONSENT_HANDLER_ENQUEUE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/BlueBirdProject/SALESFORCE/consentHandler/businessService/BS_JMS_ENQUEUE_SF_CONSENT_HANDLER" : {
+                "label" : "BusinessService/BlueBirdProject/SALESFORCE/consentHandler/businessService/BS_JMS_ENQUEUE_SF_CONSENT_HANDLER",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/SALESFORCE/consentHandler/transformation/createResponse_UpdateConsentNotification" : {
+                "label" : "Xquery/BlueBirdProject/SALESFORCE/consentHandler/transformation/createResponse_UpdateConsentNotification",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/BlueBirdProject/Resources/PS_REST_SF_CONSENT_HANDLER" : {
+                "label" : "WSDL/BlueBirdProject/Resources/PS_REST_SF_CONSENT_HANDLER",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/consentHandler/xsd/XSD_SF_CONSENT_HANDLER" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/consentHandler/xsd/XSD_SF_CONSENT_HANDLER",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/BlueBirdProject/Resources/PS_REST_SF_CONSENT_HANDLER" : {
+            "label" : "WSDL/BlueBirdProject/Resources/PS_REST_SF_CONSENT_HANDLER",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/consentHandler/xsd/XSD_SF_CONSENT_HANDLER" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/SALESFORCE/consentHandler/xsd/XSD_SF_CONSENT_HANDLER",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

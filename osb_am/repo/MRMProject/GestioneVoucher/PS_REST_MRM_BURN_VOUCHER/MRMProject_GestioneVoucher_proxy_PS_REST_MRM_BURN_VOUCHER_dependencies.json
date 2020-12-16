@@ -1,0 +1,158 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/MRMProject/GestioneVoucher/proxy/PS_REST_MRM_BURN_VOUCHER",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WADL/MRMProject/Resources/PS_REST_MRM_VOUCHER_HANDLER" : {
+        "label" : "WADL/MRMProject/Resources/PS_REST_MRM_VOUCHER_HANDLER",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "WSDL/MRMProject/Resources/PS_REST_MRM_VOUCHER_HANDLER" : {
+        "label" : "WSDL/MRMProject/Resources/PS_REST_MRM_VOUCHER_HANDLER",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/xsd/XSD_MRM_VOUCHER_HANDLER" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/xsd/XSD_MRM_VOUCHER_HANDLER",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/MRMProject/GestioneVoucher/pipeline/PL_REST_MRM_VOUCHER_HANDLER" : {
+        "label" : "Pipeline/MRMProject/GestioneVoucher/pipeline/PL_REST_MRM_VOUCHER_HANDLER",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/MRMProject/GestioneVoucher/pipeline/PL_VMS_BURN_VOUCHER" : {
+            "label" : "Pipeline/MRMProject/GestioneVoucher/pipeline/PL_VMS_BURN_VOUCHER",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/MRMProject/GestioneVoucher/businessService/BS_TUXEDO_VMS_BURNTCKPART" : {
+                "label" : "BusinessService/MRMProject/GestioneVoucher/businessService/BS_TUXEDO_VMS_BURNTCKPART",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/ApplicationObjects/MRM/GestioneVoucher/XSD_MRM_VMS_BURNTCKPART" : {
+                    "label" : "XMLSchema/MDW_CDM/ApplicationObjects/MRM/GestioneVoucher/XSD_MRM_VMS_BURNTCKPART",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0" : {
+                    "label" : "Archive/MDW_CO/libs/FML/sky_wls_commons/1/0/0",
+                    "properties" : {
+                      "nodeType" : "Archive"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/MRMProject/GestioneVoucher/transformations/createRequestEnqueueBurnVoucherCRM" : {
+                "label" : "Xquery/MRMProject/GestioneVoucher/transformations/createRequestEnqueueBurnVoucherCRM",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MRMProject/GestioneVoucher/businessService/BS_JMS_ENQUEUE_VOUCHER_NOTIFICA_FIRST" : {
+                "label" : "BusinessService/MRMProject/GestioneVoucher/businessService/BS_JMS_ENQUEUE_VOUCHER_NOTIFICA_FIRST",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : { }
+              },
+              "WSDL/MRMProject/Resources/PS_REST_MRM_VOUCHER_HANDLER" : {
+                "label" : "WSDL/MRMProject/Resources/PS_REST_MRM_VOUCHER_HANDLER",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/xsd/XSD_MRM_VOUCHER_HANDLER" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/xsd/XSD_MRM_VOUCHER_HANDLER",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Xquery/MRMProject/GestioneVoucher/transformations/createRequestVMS_BURNTCKPART" : {
+            "label" : "Xquery/MRMProject/GestioneVoucher/transformations/createRequestVMS_BURNTCKPART",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "WSDL/MRMProject/Resources/PS_REST_MRM_VOUCHER_HANDLER" : {
+            "label" : "WSDL/MRMProject/Resources/PS_REST_MRM_VOUCHER_HANDLER",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/xsd/XSD_MRM_VOUCHER_HANDLER" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MRMProject/GestioneVoucher/xsd/XSD_MRM_VOUCHER_HANDLER",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

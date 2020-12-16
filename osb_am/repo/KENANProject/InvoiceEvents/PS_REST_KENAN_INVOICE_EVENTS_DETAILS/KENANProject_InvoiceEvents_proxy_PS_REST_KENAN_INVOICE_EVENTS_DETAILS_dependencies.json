@@ -1,0 +1,151 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/KENANProject/InvoiceEvents/proxy/PS_REST_KENAN_INVOICE_EVENTS_DETAILS",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "Pipeline/KENANProject/InvoiceEvents/pipeline/PL_REST_KENAN_INVOICE_EVENTS_DETAILS" : {
+        "label" : "Pipeline/KENANProject/InvoiceEvents/pipeline/PL_REST_KENAN_INVOICE_EVENTS_DETAILS",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/KENANProject/InvoiceEvents/pipeline/PL_INTERNAL_GET_INVOICE_EVENTS_DETAILS" : {
+            "label" : "Pipeline/KENANProject/InvoiceEvents/pipeline/PL_INTERNAL_GET_INVOICE_EVENTS_DETAILS",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/KENANProject/InvoiceEvents/transformation/createResponseInvoiceEvents" : {
+                "label" : "Xquery/KENANProject/InvoiceEvents/transformation/createResponseInvoiceEvents",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/KENANProject/Resources/PS_REST_KENAN_INVOICE_EVENTS_DETAILS" : {
+                "label" : "WSDL/KENANProject/Resources/PS_REST_KENAN_INVOICE_EVENTS_DETAILS",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/InvoiceEvents/xsd/XSD_KENAN_INVOICE_EVENTS_DETAILS" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/InvoiceEvents/xsd/XSD_KENAN_INVOICE_EVENTS_DETAILS",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/KENANProject/InvoiceEvents/businessService/BS_SQL_KN_GET_INVOICE_EVENTS" : {
+                "label" : "BusinessService/KENANProject/InvoiceEvents/businessService/BS_SQL_KN_GET_INVOICE_EVENTS",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/KENANProject/Resources/BS_SQL_KN_GET_INVOICE_EVENTS/concrete" : {
+                    "label" : "WSDL/KENANProject/Resources/BS_SQL_KN_GET_INVOICE_EVENTS/concrete",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "JCA/KENANProject/Resources/BS_SQL_KN_GET_INVOICE_EVENTS_db" : {
+                    "label" : "JCA/KENANProject/Resources/BS_SQL_KN_GET_INVOICE_EVENTS_db",
+                    "properties" : {
+                      "nodeType" : "JCA"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/KENANProject/InvoiceEvents/transformation/createRequestInvoiceEvents" : {
+                "label" : "Xquery/KENANProject/InvoiceEvents/transformation/createRequestInvoiceEvents",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/KENANProject/Resources/PS_REST_KENAN_INVOICE_EVENTS_DETAILS" : {
+            "label" : "WSDL/KENANProject/Resources/PS_REST_KENAN_INVOICE_EVENTS_DETAILS",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/InvoiceEvents/xsd/XSD_KENAN_INVOICE_EVENTS_DETAILS" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/InvoiceEvents/xsd/XSD_KENAN_INVOICE_EVENTS_DETAILS",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION_WITHOUT_BRANCH",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WSDL/KENANProject/Resources/PS_REST_KENAN_INVOICE_EVENTS_DETAILS" : {
+        "label" : "WSDL/KENANProject/Resources/PS_REST_KENAN_INVOICE_EVENTS_DETAILS",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/InvoiceEvents/xsd/XSD_KENAN_INVOICE_EVENTS_DETAILS" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/KenanProject/InvoiceEvents/xsd/XSD_KENAN_INVOICE_EVENTS_DETAILS",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WADL/KENANProject/Resources/PS_REST_KENAN_INVOICE_EVENTS_DETAILS" : {
+        "label" : "WADL/KENANProject/Resources/PS_REST_KENAN_INVOICE_EVENTS_DETAILS",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      }
+    }
+  }
+}

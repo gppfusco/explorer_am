@@ -1,0 +1,151 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/InfocertProject/uploadDocument/proxy/PS_WS_INFOCERT_UPLOAD_DOCUMENT",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "WSDL/MDW_CDM/EnterpriseServices/InfocertProject/uploadDocument/wsdl/WS_INFOCERT_UPLOAD_DOCUMENT" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/InfocertProject/uploadDocument/wsdl/WS_INFOCERT_UPLOAD_DOCUMENT",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/InfocertProject/uploadDocument/xsd/XSD_INFOCERT_UPLOAD_DOCUMENT" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/InfocertProject/uploadDocument/xsd/XSD_INFOCERT_UPLOAD_DOCUMENT",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/InfocertProject/uploadDocument/pipeline/PL_WS_INFOCERT_UPLOAD_DOCUMENT_ROUTING" : {
+        "label" : "Pipeline/InfocertProject/uploadDocument/pipeline/PL_WS_INFOCERT_UPLOAD_DOCUMENT_ROUTING",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/InfocertProject/uploadDocument/wsdl/WS_INFOCERT_UPLOAD_DOCUMENT" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/InfocertProject/uploadDocument/wsdl/WS_INFOCERT_UPLOAD_DOCUMENT",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/InfocertProject/uploadDocument/xsd/XSD_INFOCERT_UPLOAD_DOCUMENT" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/InfocertProject/uploadDocument/xsd/XSD_INFOCERT_UPLOAD_DOCUMENT",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/InfocertProject/uploadDocument/pipeline/PL_INTERNAL_INFOCERT_UPLOAD_DOCUMENT" : {
+            "label" : "Pipeline/InfocertProject/uploadDocument/pipeline/PL_INTERNAL_INFOCERT_UPLOAD_DOCUMENT",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/InfocertProject/uploadDocument/transformation/createRequestUploadDocument" : {
+                "label" : "Xquery/InfocertProject/uploadDocument/transformation/createRequestUploadDocument",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/InfocertProject/uploadDocument/businessService/BS_WS_MTOM_INFOCERT_UPLOAD_DOCUMENT" : {
+                "label" : "BusinessService/InfocertProject/uploadDocument/businessService/BS_WS_MTOM_INFOCERT_UPLOAD_DOCUMENT",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/INFOCERT/uploadDocument/wsdl/LbHubImportService" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/INFOCERT/uploadDocument/wsdl/LbHubImportService",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/InfocertProject/uploadDocument/wsdl/WS_INFOCERT_UPLOAD_DOCUMENT" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/InfocertProject/uploadDocument/wsdl/WS_INFOCERT_UPLOAD_DOCUMENT",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/InfocertProject/uploadDocument/xsd/XSD_INFOCERT_UPLOAD_DOCUMENT" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/InfocertProject/uploadDocument/xsd/XSD_INFOCERT_UPLOAD_DOCUMENT",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Archive/InfocertProject/uploadDocument/jar/EncoderDecoderB64" : {
+                "label" : "Archive/InfocertProject/uploadDocument/jar/EncoderDecoderB64",
+                "properties" : {
+                  "nodeType" : "Archive"
+                },
+                "successors" : { }
+              },
+              "Xquery/InfocertProject/uploadDocument/transformation/createResponseUploadDocument" : {
+                "label" : "Xquery/InfocertProject/uploadDocument/transformation/createResponseUploadDocument",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "ServiceProvider/MDW_CDM/ServiceKeyProviders/key_provider_infocert" : {
+        "label" : "ServiceProvider/MDW_CDM/ServiceKeyProviders/key_provider_infocert",
+        "properties" : {
+          "nodeType" : "ServiceProvider"
+        },
+        "successors" : { }
+      }
+    }
+  }
+}

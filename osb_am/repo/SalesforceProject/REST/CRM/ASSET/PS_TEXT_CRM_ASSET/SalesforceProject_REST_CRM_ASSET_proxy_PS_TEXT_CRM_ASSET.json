@@ -1,0 +1,18 @@
+{
+  "MessagingApi" : {
+    "type" : "Messaging",
+    "endpoint" : "https://ws.osbcol.sky.it/osbam",
+    "path" : "/services/mdw/salesforce/assets",
+    "name" : "SalesforceProject_REST_CRM_ASSET_proxy_PS_TEXT_CRM_ASSET",
+    "remoteName" : "ProxyService/SalesforceProject/REST_CRM_ASSET/proxy/PS_TEXT_CRM_ASSET",
+    "localPath" : "osb_am\\repo\\SalesforceProject\\REST\\CRM\\ASSET\\PS_TEXT_CRM_ASSET",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbam",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

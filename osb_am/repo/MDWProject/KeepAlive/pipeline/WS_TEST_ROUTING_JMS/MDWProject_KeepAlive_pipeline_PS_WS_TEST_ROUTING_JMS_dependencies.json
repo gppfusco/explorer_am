@@ -1,0 +1,11 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/MDWProject/KeepAlive/pipeline/PS_WS_TEST_ROUTING_JMS",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "Messaging"
+    },
+    "successors" : { }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbam",
+    "path" : "/services/dms/WS_DMS_CHECK_CONTRACT_FIRST_EMISSION",
+    "name" : "DMSProject_CheckContractFirstEmission_proxy_PS_WS_DMS_CHECK_CONTRACT_FIRST_EMISSION",
+    "remoteName" : "ProxyService/DMSProject/CheckContractFirstEmission/proxy/PS_WS_DMS_CHECK_CONTRACT_FIRST_EMISSION",
+    "localPath" : "osb_am\\repo\\DMSProject\\CheckContractFirstEmission\\PS_WS_DMS_CHECK_CONTRACT_FIRST_EMISSION",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbam/services/dms/WS_DMS_CHECK_CONTRACT_FIRST_EMISSION?WSDL",
+      "xsdSchemas" : [ {
+        "xsdPath" : "/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      }, {
+        "xsdPath" : "/MDW_CDM/EnterpriseServices/DMSProject/CheckContractFirstEmission/xsd/XSD_DMS_CHECK_CONTRACT_FIRST_EMISSION",
+        "xsdNameSpace" : "http://www.skytv.it/mdw/data"
+      } ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

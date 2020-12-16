@@ -1,0 +1,304 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/InfocertProject/invoices/proxy/PS_REST_API_INVOICES",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WSDL/InfocertProject/Resources/PS_REST_API_INVOICES" : {
+        "label" : "WSDL/InfocertProject/Resources/PS_REST_API_INVOICES",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/InfocertProject/invoices/xsd/XSD_INVOICE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/InfocertProject/invoices/xsd/XSD_INVOICE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "WADL/InfocertProject/Resources/PS_REST_API_INVOICES" : {
+        "label" : "WADL/InfocertProject/Resources/PS_REST_API_INVOICES",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "ServiceProvider/MDW_CDM/ServiceKeyProviders/key_provider_infocert" : {
+        "label" : "ServiceProvider/MDW_CDM/ServiceKeyProviders/key_provider_infocert",
+        "properties" : {
+          "nodeType" : "ServiceProvider"
+        },
+        "successors" : { }
+      },
+      "Pipeline/InfocertProject/invoices/pipeline/PL_REST_API_INVOICES_ROUTING" : {
+        "label" : "Pipeline/InfocertProject/invoices/pipeline/PL_REST_API_INVOICES_ROUTING",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/InfocertProject/invoices/pipeline/PL_INTERNAL_RECUPERO_LISTA_FATTURE" : {
+            "label" : "Pipeline/InfocertProject/invoices/pipeline/PL_INTERNAL_RECUPERO_LISTA_FATTURE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/InfocertProject/invoices/businessService/BS_REST_INFOCERT" : {
+                "label" : "BusinessService/InfocertProject/invoices/businessService/BS_REST_INFOCERT",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/InfocertProject/Resources/BS_REST_INFOCERT" : {
+                    "label" : "WSDL/InfocertProject/Resources/BS_REST_INFOCERT",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "WADL/InfocertProject/Resources/BS_REST_INFOCERT" : {
+                    "label" : "WADL/InfocertProject/Resources/BS_REST_INFOCERT",
+                    "properties" : {
+                      "nodeType" : "WADL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/InfocertProject/Resources/PS_REST_API_INVOICES" : {
+                "label" : "WSDL/InfocertProject/Resources/PS_REST_API_INVOICES",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/InfocertProject/invoices/xsd/XSD_INVOICE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/InfocertProject/invoices/xsd/XSD_INVOICE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/InfocertProject/invoices/transformation/createRequestRecuperoListaFatture" : {
+                "label" : "Xquery/InfocertProject/invoices/transformation/createRequestRecuperoListaFatture",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/InfocertProject/invoices/transformation/createResponseRecuperoListaFatture" : {
+                "label" : "Xquery/InfocertProject/invoices/transformation/createResponseRecuperoListaFatture",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "WSDL/InfocertProject/Resources/PS_REST_API_INVOICES" : {
+            "label" : "WSDL/InfocertProject/Resources/PS_REST_API_INVOICES",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/InfocertProject/invoices/xsd/XSD_INVOICE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/InfocertProject/invoices/xsd/XSD_INVOICE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/InfocertProject/invoices/pipeline/PL_INTERNAL_SDI_OUTCOME_FATTURA" : {
+            "label" : "Pipeline/InfocertProject/invoices/pipeline/PL_INTERNAL_SDI_OUTCOME_FATTURA",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/InfocertProject/invoices/businessService/BS_REST_INFOCERT" : {
+                "label" : "BusinessService/InfocertProject/invoices/businessService/BS_REST_INFOCERT",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/InfocertProject/Resources/BS_REST_INFOCERT" : {
+                    "label" : "WSDL/InfocertProject/Resources/BS_REST_INFOCERT",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "WADL/InfocertProject/Resources/BS_REST_INFOCERT" : {
+                    "label" : "WADL/InfocertProject/Resources/BS_REST_INFOCERT",
+                    "properties" : {
+                      "nodeType" : "WADL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/InfocertProject/invoices/transformation/createResponseOutcomeFattura" : {
+                "label" : "Xquery/InfocertProject/invoices/transformation/createResponseOutcomeFattura",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "WSDL/InfocertProject/Resources/PS_REST_API_INVOICES" : {
+                "label" : "WSDL/InfocertProject/Resources/PS_REST_API_INVOICES",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/InfocertProject/invoices/xsd/XSD_INVOICE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/InfocertProject/invoices/xsd/XSD_INVOICE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/InfocertProject/invoices/transformation/createRequestOutcomeFattura" : {
+                "label" : "Xquery/InfocertProject/invoices/transformation/createRequestOutcomeFattura",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "Pipeline/InfocertProject/invoices/pipeline/PL_INTERNAL_RECUPERO_FILE_FATTURA" : {
+            "label" : "Pipeline/InfocertProject/invoices/pipeline/PL_INTERNAL_RECUPERO_FILE_FATTURA",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/InfocertProject/invoices/businessService/BS_REST_INFOCERT" : {
+                "label" : "BusinessService/InfocertProject/invoices/businessService/BS_REST_INFOCERT",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/InfocertProject/Resources/BS_REST_INFOCERT" : {
+                    "label" : "WSDL/InfocertProject/Resources/BS_REST_INFOCERT",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  },
+                  "WADL/InfocertProject/Resources/BS_REST_INFOCERT" : {
+                    "label" : "WADL/InfocertProject/Resources/BS_REST_INFOCERT",
+                    "properties" : {
+                      "nodeType" : "WADL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/InfocertProject/Resources/PS_REST_API_INVOICES" : {
+                "label" : "WSDL/InfocertProject/Resources/PS_REST_API_INVOICES",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/InfocertProject/invoices/xsd/XSD_INVOICE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/InfocertProject/invoices/xsd/XSD_INVOICE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/InfocertProject/invoices/transformation/createResponseRecuperoFileFattura" : {
+                "label" : "Xquery/InfocertProject/invoices/transformation/createResponseRecuperoFileFattura",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/InfocertProject/invoices/transformation/createRequestRecuperoFileFattura" : {
+                "label" : "Xquery/InfocertProject/invoices/transformation/createRequestRecuperoFileFattura",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

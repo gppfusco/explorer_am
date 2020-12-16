@@ -1,0 +1,217 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/BlueBirdProject/OSS/servicesAUAHandler/proxy/PS_WS_AUA_BROADBAND_VOICE_SERVICE",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/BlueBirdProject/OSS/servicesAUAHandler/pipeline/PL_WS_AUA_BROADBAND_VOICE_SERVICE" : {
+        "label" : "Pipeline/BlueBirdProject/OSS/servicesAUAHandler/pipeline/PL_WS_AUA_BROADBAND_VOICE_SERVICE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/BlueBirdProject/OSS/servicesAUAHandler/pipeline/PL_INTERNAL_AUA_SUSPEND_SERVICE" : {
+            "label" : "Pipeline/BlueBirdProject/OSS/servicesAUAHandler/pipeline/PL_INTERNAL_AUA_SUSPEND_SERVICE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/BlueBirdProject/OSS/servicesAUAHandler/businessService/BS_WS_AUA_BROADBAND_VOICE_SERVICE" : {
+                "label" : "BusinessService/BlueBirdProject/OSS/servicesAUAHandler/businessService/BS_WS_AUA_BROADBAND_VOICE_SERVICE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/BLUEBIRD/OSS/servicesAUAHandler/schema/wsdl/AUAI/RequestWS/v2/0" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/BLUEBIRD/OSS/servicesAUAHandler/schema/wsdl/AUAI/RequestWS/v2/0",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/BlueBirdProject/OSS/servicesAUAHandler/transformation/createSecurityHeader" : {
+                "label" : "Xquery/BlueBirdProject/OSS/servicesAUAHandler/transformation/createSecurityHeader",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/OSS/servicesAUAHandler/transformation/createResponse_CallAUA" : {
+                "label" : "Xquery/BlueBirdProject/OSS/servicesAUAHandler/transformation/createResponse_CallAUA",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/OSS/servicesAUAHandler/transformation/createRequest_CallAUA" : {
+                "label" : "Xquery/BlueBirdProject/OSS/servicesAUAHandler/transformation/createRequest_CallAUA",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/servicesAUAHandler/wsdl/WS_AUA_BROADBAND_VOICE_SERVICE" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/servicesAUAHandler/wsdl/WS_AUA_BROADBAND_VOICE_SERVICE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/servicesAUAHandler/xsd/XSD_AUA_BROADBAND_VOICE_SERVICE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/servicesAUAHandler/xsd/XSD_AUA_BROADBAND_VOICE_SERVICE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/BlueBirdProject/OSS/servicesAUAHandler/pipeline/PL_INTERNAL_AUA_RESUME_SERVICE" : {
+            "label" : "Pipeline/BlueBirdProject/OSS/servicesAUAHandler/pipeline/PL_INTERNAL_AUA_RESUME_SERVICE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "BusinessService/BlueBirdProject/OSS/servicesAUAHandler/businessService/BS_WS_AUA_BROADBAND_VOICE_SERVICE" : {
+                "label" : "BusinessService/BlueBirdProject/OSS/servicesAUAHandler/businessService/BS_WS_AUA_BROADBAND_VOICE_SERVICE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "WSDL/MDW_CDM/ApplicationObjects/BLUEBIRD/OSS/servicesAUAHandler/schema/wsdl/AUAI/RequestWS/v2/0" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/BLUEBIRD/OSS/servicesAUAHandler/schema/wsdl/AUAI/RequestWS/v2/0",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "Xquery/BlueBirdProject/OSS/servicesAUAHandler/transformation/createSecurityHeader" : {
+                "label" : "Xquery/BlueBirdProject/OSS/servicesAUAHandler/transformation/createSecurityHeader",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/OSS/servicesAUAHandler/transformation/createResponse_CallAUA" : {
+                "label" : "Xquery/BlueBirdProject/OSS/servicesAUAHandler/transformation/createResponse_CallAUA",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/BlueBirdProject/OSS/servicesAUAHandler/transformation/createRequest_CallAUA" : {
+                "label" : "Xquery/BlueBirdProject/OSS/servicesAUAHandler/transformation/createRequest_CallAUA",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              },
+              "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/servicesAUAHandler/wsdl/WS_AUA_BROADBAND_VOICE_SERVICE" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/servicesAUAHandler/wsdl/WS_AUA_BROADBAND_VOICE_SERVICE",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/servicesAUAHandler/xsd/XSD_AUA_BROADBAND_VOICE_SERVICE" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/servicesAUAHandler/xsd/XSD_AUA_BROADBAND_VOICE_SERVICE",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              }
+            }
+          },
+          "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/servicesAUAHandler/wsdl/WS_AUA_BROADBAND_VOICE_SERVICE" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/servicesAUAHandler/wsdl/WS_AUA_BROADBAND_VOICE_SERVICE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/servicesAUAHandler/xsd/XSD_AUA_BROADBAND_VOICE_SERVICE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/servicesAUAHandler/xsd/XSD_AUA_BROADBAND_VOICE_SERVICE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/servicesAUAHandler/wsdl/WS_AUA_BROADBAND_VOICE_SERVICE" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/servicesAUAHandler/wsdl/WS_AUA_BROADBAND_VOICE_SERVICE",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/servicesAUAHandler/xsd/XSD_AUA_BROADBAND_VOICE_SERVICE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/BlueBirdProject/OSS/servicesAUAHandler/xsd/XSD_AUA_BROADBAND_VOICE_SERVICE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

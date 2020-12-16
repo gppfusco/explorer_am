@@ -1,0 +1,11 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/REST_CRM_GET_INTENDED_USE/proxy/PS_TEXT_CRM_GET_INTENDED_USE",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "Messaging"
+    },
+    "successors" : { }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "MessagingApi" : {
+    "type" : "Messaging",
+    "endpoint" : "https://ws.osbcol.sky.it/osbam",
+    "path" : "/services/salesforce/rest/getIntendedUse",
+    "name" : "SalesforceProject_REST_CRM_GET_INTENDED_USE_proxy_PS_TEXT_CRM_GET_INTENDED_USE",
+    "remoteName" : "ProxyService/SalesforceProject/REST_CRM_GET_INTENDED_USE/proxy/PS_TEXT_CRM_GET_INTENDED_USE",
+    "localPath" : "osb_am\\repo\\SalesforceProject\\REST\\CRM\\GET\\INTENDED\\USE\\PS_TEXT_CRM_GET_INTENDED_USE",
+    "authentication" : "http:HttpBasicAuthenticationType",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbam",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

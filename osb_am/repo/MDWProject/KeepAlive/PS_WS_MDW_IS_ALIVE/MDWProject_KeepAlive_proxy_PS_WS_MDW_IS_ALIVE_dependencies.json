@@ -1,0 +1,93 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/MDWProject/KeepAlive/proxy/PS_WS_MDW_IS_ALIVE",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "SOAP"
+    },
+    "successors" : {
+      "Pipeline/MDWProject/KeepAlive/pipeline/PL_WS_MDW_IS_ALIVE" : {
+        "label" : "Pipeline/MDWProject/KeepAlive/pipeline/PL_WS_MDW_IS_ALIVE",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/MDW_CDM/EnterpriseServices/MDWProject/KeepAlive/wsdl/WS_MDW_IS_ALIVE" : {
+            "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/KeepAlive/wsdl/WS_MDW_IS_ALIVE",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/KeepAlive/xsd/XSD_MDW_KEEPALIVE" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/KeepAlive/xsd/XSD_MDW_KEEPALIVE",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log" : {
+            "label" : "Xquery/MDW_CDM/ApplicationObjects/LOG/trasformation/populate_log",
+            "properties" : {
+              "nodeType" : "Xquery"
+            },
+            "successors" : { }
+          },
+          "BusinessService/MDWProject/KeepAlive/pipeline/BS_HTTP_INVOKE_PROXY_LOG" : {
+            "label" : "BusinessService/MDWProject/KeepAlive/pipeline/BS_HTTP_INVOKE_PROXY_LOG",
+            "properties" : {
+              "nodeType" : "BusinessService"
+            },
+            "successors" : {
+              "WSDL/MDW_CDM/EnterpriseServices/AOL/WS_MDW_WEB_CONFIRM_ORDER" : {
+                "label" : "WSDL/MDW_CDM/EnterpriseServices/AOL/WS_MDW_WEB_CONFIRM_ORDER",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/MDW_CDM/EnterpriseServices/MDWProject/KeepAlive/wsdl/WS_MDW_IS_ALIVE" : {
+        "label" : "WSDL/MDW_CDM/EnterpriseServices/MDWProject/KeepAlive/wsdl/WS_MDW_IS_ALIVE",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/KeepAlive/xsd/XSD_MDW_KEEPALIVE" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/MDWProject/KeepAlive/xsd/XSD_MDW_KEEPALIVE",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/SoapHeaderSKY",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}

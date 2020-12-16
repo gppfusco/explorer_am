@@ -1,0 +1,122 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/REST_CRM_ORDER_HANDLER/proxy/PS_REST_CRM_ORDER_HANDLER",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WADL/SalesforceProject/Resources/PS_REST_CRM_ORDER_HANDLER" : {
+        "label" : "WADL/SalesforceProject/Resources/PS_REST_CRM_ORDER_HANDLER",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "WSDL/SalesforceProject/Resources/PS_REST_CRM_ORDER_HANDLER" : {
+        "label" : "WSDL/SalesforceProject/Resources/PS_REST_CRM_ORDER_HANDLER",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_OrderHandler/xsd/XSD_CRM_ORDER_HANDLER" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_OrderHandler/xsd/XSD_CRM_ORDER_HANDLER",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      },
+      "Pipeline/SalesforceProject/REST_CRM_ORDER_HANDLER/pipeline/PL_ROUTING_ORDER_HANDLER" : {
+        "label" : "Pipeline/SalesforceProject/REST_CRM_ORDER_HANDLER/pipeline/PL_ROUTING_ORDER_HANDLER",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "WSDL/SalesforceProject/Resources/PS_REST_CRM_ORDER_HANDLER" : {
+            "label" : "WSDL/SalesforceProject/Resources/PS_REST_CRM_ORDER_HANDLER",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_OrderHandler/xsd/XSD_CRM_ORDER_HANDLER" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_OrderHandler/xsd/XSD_CRM_ORDER_HANDLER",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "Pipeline/SalesforceProject/REST_CRM_ORDER_HANDLER/pipeline/PL_INTERNAL_DELETE_ORDERS_ENQUEUE" : {
+            "label" : "Pipeline/SalesforceProject/REST_CRM_ORDER_HANDLER/pipeline/PL_INTERNAL_DELETE_ORDERS_ENQUEUE",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "WSDL/SalesforceProject/Resources/PS_REST_CRM_ORDER_HANDLER" : {
+                "label" : "WSDL/SalesforceProject/Resources/PS_REST_CRM_ORDER_HANDLER",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_OrderHandler/xsd/XSD_CRM_ORDER_HANDLER" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_OrderHandler/xsd/XSD_CRM_ORDER_HANDLER",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "BusinessService/SalesforceProject/REST_CRM_ORDER_HANDLER/businessService/BS_JMS_ORDER_HANDLER_ENQUEUE" : {
+                "label" : "BusinessService/SalesforceProject/REST_CRM_ORDER_HANDLER/businessService/BS_JMS_ORDER_HANDLER_ENQUEUE",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : { }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_ENQUEUE_INTERNAL_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_ENQUEUE_INTERNAL_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

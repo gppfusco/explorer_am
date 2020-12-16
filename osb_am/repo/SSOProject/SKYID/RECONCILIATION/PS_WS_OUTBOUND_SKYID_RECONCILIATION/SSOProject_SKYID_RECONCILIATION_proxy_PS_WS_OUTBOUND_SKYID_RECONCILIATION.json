@@ -1,0 +1,18 @@
+{
+  "SoapApi" : {
+    "type" : "SOAP",
+    "endpoint" : "https://ws.osbcol.sky.it/osbam",
+    "path" : "/services/SSO/WS_OUTBOUND_SKYID_RECONCILIATION",
+    "name" : "SSOProject_SKYID_RECONCILIATION_proxy_PS_WS_OUTBOUND_SKYID_RECONCILIATION",
+    "remoteName" : "ProxyService/SSOProject/SKYID_RECONCILIATION/proxy/PS_WS_OUTBOUND_SKYID_RECONCILIATION",
+    "localPath" : "osb_am\\repo\\SSOProject\\SKYID\\RECONCILIATION\\PS_WS_OUTBOUND_SKYID_RECONCILIATION",
+    "authentication" : "Undefined",
+    "apiSpecification" : {
+      "apiSpecEndpoint" : "https://ws.osbcol.sky.it/osbam/services/SSO/WS_OUTBOUND_SKYID_RECONCILIATION?WSDL",
+      "xsdSchemas" : [ ]
+    },
+    "integrationScenario" : "NOT_DEFINED",
+    "bufferingSupported" : false,
+    "compressionSupported" : false
+  }
+}

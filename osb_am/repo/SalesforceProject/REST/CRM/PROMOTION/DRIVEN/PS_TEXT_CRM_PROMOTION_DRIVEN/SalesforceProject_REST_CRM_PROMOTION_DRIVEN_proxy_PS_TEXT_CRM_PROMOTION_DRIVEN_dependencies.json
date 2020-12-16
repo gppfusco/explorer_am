@@ -1,0 +1,11 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/REST_CRM_PROMOTION_DRIVEN/proxy/PS_TEXT_CRM_PROMOTION_DRIVEN",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "Messaging"
+    },
+    "successors" : { }
+  }
+}

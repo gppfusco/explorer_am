@@ -1,0 +1,151 @@
+{
+  "DefaultNetworkNode" : {
+    "label" : "ProxyService/SalesforceProject/REST_CRM_STB_HANDLER/proxy/PS_REST_CRM_STB_HANDLER",
+    "properties" : {
+      "transport-type" : "http",
+      "nodeType" : "Proxy",
+      "service-type" : "REST"
+    },
+    "successors" : {
+      "WADL/SalesforceProject/Resources/PS_REST_CRM_STB_HANDLER" : {
+        "label" : "WADL/SalesforceProject/Resources/PS_REST_CRM_STB_HANDLER",
+        "properties" : {
+          "nodeType" : "WADL"
+        },
+        "successors" : { }
+      },
+      "Pipeline/SalesforceProject/REST_CRM_STB_HANDLER/pipeline/PL_REST_CRM_STB_HANDLER_ROUTING" : {
+        "label" : "Pipeline/SalesforceProject/REST_CRM_STB_HANDLER/pipeline/PL_REST_CRM_STB_HANDLER_ROUTING",
+        "properties" : {
+          "nodeType" : "Pipeline"
+        },
+        "successors" : {
+          "Pipeline/SalesforceProject/REST_CRM_STB_HANDLER/pipeline/PL_INTERNAL_GET_CUSTOMER_INFO" : {
+            "label" : "Pipeline/SalesforceProject/REST_CRM_STB_HANDLER/pipeline/PL_INTERNAL_GET_CUSTOMER_INFO",
+            "properties" : {
+              "nodeType" : "Pipeline"
+            },
+            "successors" : {
+              "Xquery/SalesforceProject/REST_CRM_STB_HANDLER/transformation/createRequest_GetCustomerInfo" : {
+                "label" : "Xquery/SalesforceProject/REST_CRM_STB_HANDLER/transformation/createRequest_GetCustomerInfo",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "Xquery/SalesforceProject/REST_CRM_STB_HANDLER/transformation/createResponse_GetCustomerInfo" : {
+                "label" : "Xquery/SalesforceProject/REST_CRM_STB_HANDLER/transformation/createResponse_GetCustomerInfo",
+                "properties" : {
+                  "nodeType" : "Xquery"
+                },
+                "successors" : { }
+              },
+              "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF" : {
+                "label" : "BusinessService/MDW_CO/businessServices/BS_PSSB_EJB_SF",
+                "properties" : {
+                  "nodeType" : "BusinessService"
+                },
+                "successors" : {
+                  "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB" : {
+                    "label" : "ForeignJNDIProvider/System/JNDI/Providers/JNDIProviderOSB_SB",
+                    "properties" : {
+                      "nodeType" : "ForeignJNDIProvider"
+                    },
+                    "successors" : { }
+                  },
+                  "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF" : {
+                    "label" : "WSDL/MDW_CDM/ApplicationObjects/SALESFORCE/ejb_mdw/WSDL_BS_EJB_SF",
+                    "properties" : {
+                      "nodeType" : "WSDL"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "WSDL/SalesforceProject/Resources/PS_REST_CRM_STB_HANDLER" : {
+                "label" : "WSDL/SalesforceProject/Resources/PS_REST_CRM_STB_HANDLER",
+                "properties" : {
+                  "nodeType" : "WSDL"
+                },
+                "successors" : {
+                  "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  },
+                  "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_STBHandler/xsd/XSD_CRM_STB_HANDLER" : {
+                    "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_STBHandler/xsd/XSD_CRM_STB_HANDLER",
+                    "properties" : {
+                      "nodeType" : "XMLSchema"
+                    },
+                    "successors" : { }
+                  }
+                }
+              },
+              "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE" : {
+                "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_INTERNAL_GENERIC_OPERATION_TEMPLATE",
+                "properties" : {
+                  "nodeType" : "PipelineTemplate"
+                },
+                "successors" : { }
+              }
+            }
+          },
+          "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION" : {
+            "label" : "PipelineTemplate/MDW_CO/templates/pipeline/PL_WS_SERVICE_ROUTING_TEMPLATE_VALIDATION",
+            "properties" : {
+              "nodeType" : "PipelineTemplate"
+            },
+            "successors" : { }
+          },
+          "WSDL/SalesforceProject/Resources/PS_REST_CRM_STB_HANDLER" : {
+            "label" : "WSDL/SalesforceProject/Resources/PS_REST_CRM_STB_HANDLER",
+            "properties" : {
+              "nodeType" : "WSDL"
+            },
+            "successors" : {
+              "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              },
+              "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_STBHandler/xsd/XSD_CRM_STB_HANDLER" : {
+                "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_STBHandler/xsd/XSD_CRM_STB_HANDLER",
+                "properties" : {
+                  "nodeType" : "XMLSchema"
+                },
+                "successors" : { }
+              }
+            }
+          }
+        }
+      },
+      "WSDL/SalesforceProject/Resources/PS_REST_CRM_STB_HANDLER" : {
+        "label" : "WSDL/SalesforceProject/Resources/PS_REST_CRM_STB_HANDLER",
+        "properties" : {
+          "nodeType" : "WSDL"
+        },
+        "successors" : {
+          "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseObjects/CommonEntities/restErrors",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          },
+          "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_STBHandler/xsd/XSD_CRM_STB_HANDLER" : {
+            "label" : "XMLSchema/MDW_CDM/EnterpriseServices/SalesforceProject/Rest_STBHandler/xsd/XSD_CRM_STB_HANDLER",
+            "properties" : {
+              "nodeType" : "XMLSchema"
+            },
+            "successors" : { }
+          }
+        }
+      }
+    }
+  }
+}
